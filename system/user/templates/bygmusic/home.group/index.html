@@ -1,0 +1,17 @@
+{global_open}
+
+	{if group_title == 'Super Admin'} 
+		{sales_nav}
+		{sales_dashboard} 
+	{if:elseif group_title == 'Sales'} 
+		{sales_nav}
+		{sales_dashboard} 
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+		{sponsor_dashboard}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+		{artist_dashboard}
+	{/if}
+
+{global_close}

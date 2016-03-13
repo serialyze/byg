@@ -1,0 +1,86 @@
+		<div id="main-wrap"><div id="main">
+
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register">
+
+{exp:user:edit return="edit/index"}
+				
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Company Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="screen_name" placeholder="" value="{screen_name}">
+								</label>
+							</div>
+							<div class="medium-6 columns end">
+								<label>Industry Category
+									<select name="sponsor_industry_category" id="">
+										{select_sponsor_industry_category}
+											<option value="{value}" {selected}>{value}</option>
+										{/select_sponsor_industry_category}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Size
+									<select name="sponsor_company_size" id="">
+										{select_sponsor_company_size}
+											<option value="{value}" {selected}>{value}</option>
+										{/select_sponsor_company_size}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Website
+									<input type="url" name="url" placeholder="" value="{url}">
+								</label>
+							</div>
+							<div class="columns twelve">
+								<label>Digital Actions Required
+									<textarea name="sponsor_digital_actions_required" id="" cols="30" rows="4">{sponsor_digital_actions_required}</textarea>
+								</label>
+							</div>
+							<div class="columns twelve">
+								<label>Please list any advertising agencies we may need to coordinate with.
+									<textarea name="sponsor_other_agencies" id="" cols="30" rows="2">{sponsor_other_agencies}</textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Contact Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="contact_name" placeholder="" value="{contact_name}">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Position
+									<input type="text" name="contact_position" placeholder="" value="{contact_position}">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Email
+									<!-- <input type="email" placeholder=""> -->
+									<input type="email" name="username" id="email" value="{username}"/>
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Phone
+									<input type="tel" name="contact_phone" placeholder="" value="{contact_phone}">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Update</button>
+				</div>
+
+{/exp:user:edit}
+			</div>
+
+    	</div></div>

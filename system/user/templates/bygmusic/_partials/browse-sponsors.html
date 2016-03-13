@@ -1,0 +1,21 @@
+        <div class="row"><div class="columns twelve">
+        	<table class="hover">
+        		
+        		<tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th width="150">City</th>
+                    <th width="200">Product Type</th>
+                </tr>
+
+{exp:user:users group_id="7" dynamic="no"}
+        		<tr>
+                    <td><a href="/profile/sponsor/{member_id}">{screen_name}</a></td>
+                    <td>{contact_name}</td>
+                    <td>{sponsor_city}, {sponsor_state}</td>
+                    <td>{sponsor_industry_category}</td>
+                </tr>
+{/exp:user:users}
+
+        	</table>
+        </div></div>

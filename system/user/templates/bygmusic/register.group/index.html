@@ -1,0 +1,99 @@
+{global_open}
+
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row" id="begin-register"><div class="columns twelve">
+        	<h1>Registration</h1>
+        	<p>This is an even better explanation of why you want to joing BYG Music. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor tellus, suscipit vitae auctor iaculis, hendrerit at justo. Proin vitae pellentesque dui. Integer sed urna viverra, luctus mauris non, facilisis ante. Aliquam sit amet nulla eu ligula varius viverra. Fusce semper tortor vitae nunc efficitur aliquam. Sed ultricies placerat interdum. Donec est orci, efficitur in hendrerit ac, pulvinar sit amet lorem.</p>
+        </div></div>
+
+<!-- *------------ registration success messaging ------------* -->
+        {if segment_2 == "success"}
+
+        	<div class="row"><div class="columns twelve">
+        		<h3>Awesome.</h3>
+        		<h4>Welcome to BYG Music.</h4>
+        		<p><a href="/home">Click here to goto your dashboard.</a></p>
+        	</div></div>
+
+<!-- *------------ else show registration form ------------* -->
+        {if:else}
+
+			{exp:user:register admin_register="yes" required="" return="register/thankyou" {if segment_2 == 'key'} require_key="yes" return="register/index/success"{/if}}
+			<div class="row"><div class="columns twelve">
+				<h4>Sign up here.</h4>
+				<fieldset>
+					<legend>Account Type</legend>
+					{if segment_2=="key"}
+						<input type="hidden" value="{selected_group_id}" name="group_id">
+					{if:else}
+					<div class="row">
+						<input type="hidden" value="4" name="group_id">
+						<div class="small-6 medium-2 columns">
+							<input type="radio" name="requested_group" value="7"> <label for="">Artist</label>
+						</div>
+						<div class="small-6 medium-2 columns end">
+							<input type="radio" name="requested_group" value="8"> <label for="">Sponsor</label>
+						</div>
+					</div>
+					{/if}
+					<div class="row">
+						<div class="small-12 medium-6 columns end">
+							<label>Group or Company Name<input type="text" name="screen_name" placeholder=""></label>
+						</div>
+					</div>
+					
+				</fieldset>
+
+				<fieldset>
+					<legend>Contact Details</legend>
+					<div class="row">
+						<div class="small-12 medium-6 columns">
+							<label>Name<input type="text" name="contact_name" placeholder=""></label>
+						</div>
+						<div class="small-12 medium-6 columns">
+							<label>Position<input type="text" name="contact_position" placeholder=""></label>
+						</div>
+						<div class="small-12 medium-6 columns">
+							<label>Email<input type="email" name="username" id="email" placeholder="" value=""></label>
+						</div>
+						<div class="small-12 medium-6 columns">
+							<label>Phone<input type="tel" name="artist_contact_phone" placeholder=""></label>
+						</div>
+						<div class="twelve columns">
+							<label>What can we help you with?</label><textarea name="user_needs" id="user_needs" cols="30" rows="4"></textarea>
+						</div>
+						{if segment_2=="key"}
+						<div class="small-12 medium-6 columns end">
+							<label for="">Invitation Key<input type="text" name="key" id="key" value="{key}"></label>
+						</div>
+						{/if}
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Create a Password</legend>
+					<div class="row">
+						<div class="small-12 medium-6 columns">
+							<label>Password<input type="password" name="password" id="password" placeholder=""></label>
+						</div>
+						<div class="small-12 medium-6 columns">
+							<label>Confirm Password<input type="password" name="password_confirm"  id="password_confirm" placeholder=""></label>
+						</div>
+						<div class="small-12 medium-6 columns end">
+							<input type="checkbox" name="accept_terms" value="y" /><label>I accept the <a href="terms.php">Terms of Service</a></label>
+						</div>
+					</div>
+				</fieldset>
+
+				<input type="submit" value="Submit" class="button small">
+			</div></div>
+			{/exp:user:register}
+
+        {/if}
+
+        
+        
+    </div></div>
+
+{global_close}

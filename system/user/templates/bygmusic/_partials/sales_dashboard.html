@@ -1,0 +1,66 @@
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row">
+        	<div class="columns twelve">
+        		<h1>Hi {username}.</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns small-12" style="background: rgba(255, 0, 255, .25);">
+                <h5>Waiting Approval</h5>
+                <table class="hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Group</th>
+                        <th width="100">Added</th>
+                    </tr>
+{exp:user:users group_id="4"}
+                    {if user_no_results}
+                        <tr><td colspan="3">Sorry, no results were found.</td></tr>
+                    {/if}
+                    <tr>
+                        <td><a href="/profile/pending/{member_id}">{screen_name}</a></td>
+                        <td>{if requested_group == "7"}Sponsor{if:else}Artist{/if}</td>
+                        <td>{join_date format="%m.%d.%y"}</td>
+                    </tr>
+{/exp:user:users}
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="columns small-12 medium-6">
+                <h5>Newest Artists</h5>
+                <table class="hover">
+                    <tr>
+                        <th>Name</th>
+                        <th width="100">Added</th>
+                    </tr>
+{exp:user:users group_id="8" limit="5"}
+                    <tr>
+                        <td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
+                        <td>{join_date format="%m.%d.%y"}</td>
+                    </tr>
+{/exp:user:users}
+                </table>
+            </div>
+            <div class="columns small-12 medium-6">
+                <h5>Newest Sponsors</h5>
+                <table class="hover">
+                    <tr>
+                        <th>Name</th>
+                        <th width="100">Added</th>
+                    </tr>
+{exp:user:users group_id="7" limit="5"}
+                    <tr>
+                        <td><a href="/profile/sponsor/{member_id}">{screen_name}</a></td>
+                        <td>{join_date format="%m.%d.%y"}</td>
+                    </tr>
+{/exp:user:users}
+                </table>
+            </div>
+        </div>
+        
+    </div></div>

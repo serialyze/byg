@@ -1,0 +1,36 @@
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row">
+        	<div class="columns twelve">
+{exp:user:profile}
+                <h1>Howdy {contact_name}.</h1>
+{/exp:user:profile}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns small-12 medium-6" style="background: rgba(255, 0, 255, .25);">
+                <h5>Featured Artist</h5>
+                <img src="/profiles/darwenstheory/profile.jpg" alt="">
+                <h6>Darwen's Theory</h6>
+                <p>Nunc aliquet diam ut enim blandit consectetur. Etiam turpis orci, blandit eu arcu at, lobortis ultrices purus. Pellentesque cursus tincidunt congue. Nam vitae finibus est. Donec auctor, turpis eget lobortis rutrum, felis libero molestie nisi, eu consectetur ante massa et turpis. In eu tempor arcu. Vestibulum velit mauris, hendrerit vitae nisl eget, malesuada ultricies nisl.</p>
+            </div>
+            <div class="columns small-12 medium-6">
+                <span class="float-right"><a href="/browse/artists">Browse all</a></span>
+                <h5>Newest Artists</h5>
+                <table class="hover">
+                    <tr>
+                        <th>Name</th>
+                        <th width="100">Added</th>
+                    </tr>
+{exp:user:users group_id="8" limit="5"}
+                    <tr>
+                        <td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
+                        <td>{join_date format="%m.%d.%y"}</td>
+                    </tr>
+{/exp:user:users}
+                </table>
+            </div>
+        </div>
+        
+    </div></div>

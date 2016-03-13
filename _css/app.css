@@ -1,0 +1,63 @@
+/****************************************
+
+Site		    basic template
+Author		    monica christopher	
+
+TOC
+1. Global Styles
+2. Header Styles
+3. Nav Styles
+4. Content Styles
+5. Footer Styles
+
+Colors
+
+/***************************************/
+
+/* 1. Global Styles */
+*					{  }
+
+
+a:link, a:visited	{  }
+a:hover				{  }
+
+#wrap   			{ margin: 0 3vw; }
+
+#head-wrap          {  }
+#navi-wrap          {  }
+#main-wrap          {  }
+#foot-wrap          {  }
+
+i 					{ color: inherit; }
+
+th 					{ text-align: left; }
+td 					{ vertical-align: top; border: 1px solid #ccc; }
+
+
+/* 2. Header Styles */
+#head				{  }
+
+
+/* 3. Nav Styles */
+#navi               { padding: 1.5rem 0; }
+
+
+/* 4. Content Styles */
+#main               {  }
+
+.sales 				{ margin-bottom: 2rem; }
+
+#welcome-login form 		{ margin: 2rem 20%; }
+
+#begin-register .button 	{ width: 10rem; margin: 0 1rem; }
+
+
+
+/* 5. Footer Styles */
+#foot			    {  }
+
+
+
+
+
+.err-wrap { display: none; }

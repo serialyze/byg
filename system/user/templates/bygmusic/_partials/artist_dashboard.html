@@ -1,0 +1,66 @@
+<link href="{path=css/_ee_channel_form_css}" type="text/css" rel="stylesheet" media="screen">
+
+    <div id="main-wrap"><div id="main">
+
+        <div class="row">
+        	<div class="columns twelve">
+{exp:user:profile}
+                <h1>Howdy {contact_name}.</h1>
+                <h6>This is what your profile looks like to potential sponsors.</h6>
+{/exp:user:profile}
+            </div>
+        </div>
+
+{exp:user:profile dynamic="no"}
+        <div class="row">
+            <div class="columns small-12 medium-6">
+        {exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+                <img src="{artist_bio_photo}" alt="">
+        {/exp:channel:entries}
+                <p><strong>Members :</strong> {artist_members}</p>
+            </div>
+            <div class="columns small-12 medium-6">
+                <h2>{screen_name}</h2>
+                {artist_bio}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns small-12 medium-3">
+                <h4>Artist Details</h4>
+                <ul>
+                    <li>Genre : {artist_genre}</li>
+                    <li>Reach : {artist_reach}</li>
+                    <li>Fans : {artist_fans_gender} / {artist_fans_age}</li>
+                </ul>
+            </div>
+        {exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+            <div class="columns small-12 medium-3" style="background: rgba(255, 0, 255, .25);">
+                <h4>Social / Followers</h4>
+                <ul>
+                    {if url}<li><a href="{url}"><i class="fi-home"></i> {url}</a></li>{/if}
+                    {if artist_facebook}<li><a href="{artist_facebook}" target="_blank"><i class="fi-social-facebook"></i> Facebook</a> / ???</li>{/if}
+                    {if artist_twitter}<li><a href="{artist_twitter}" target="_blank"><i class="fi-social-twitter"></i> Twitter</a> / ???</li>{/if}
+                    {if artist_instagram}<li><a href="{artist_instagram}" target="_blank"><i class="fi-social-instagram"></i> Instagram</a> / ???</li>{/if}
+                    {if artist_youtube}<li><a href="{artist_youtube}" target="_blank"><i class="fi-social-youtube"></i> Youtube</a> / ???</li>{/if}
+                    {if artist_soundcloud}<li><a href="{artist_soundcloud}" target="_blank"><i class="fi-sound"></i> Soundcloud</a> / ???</li>{/if}
+                </ul>
+            </div>
+            <div class="columns small-12 medium-3">
+                <h4>Featured media</h4>
+                <ul>
+        {exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+            {artist_other_media}
+                    <li><a href="{artist_other_media:link_url}">{artist_other_media:link_title}</a></li>
+            {/artist_other_media}
+        {/exp:channel:entries}
+                </ul>
+            </div>
+            <div class="columns small-12 medium-3">
+                <h4>Influences</h4>
+                {artist_influences}
+            </div>
+        </div>
+{/exp:user:profile}
+        
+    </div></div>

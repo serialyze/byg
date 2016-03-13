@@ -1,0 +1,108 @@
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register" class="hide">
+{exp:user:register admin_register="yes" group_id="7" required="" return="register/thankyou"}
+				
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Company Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="screen_name" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns end">
+								<label>Industry Category
+									<select name="sponsor_industry_category" id="">
+										{select_sponsor_industry_category}
+											<option value="{value}">{value}</option>
+										{/select_sponsor_industry_category}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Size
+									<select name="sponsor_company_size" id="">
+										{select_sponsor_company_size}
+											<option value="{value}">{value}</option>
+										{/select_sponsor_company_size}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Website
+									<input type="url" name="url" placeholder="">
+								</label>
+							</div>
+							<div class="columns twelve">
+								<label>Digital Actions Required
+									<textarea name="sponsor_digital_actions_required" id="" cols="30" rows="4"></textarea>
+								</label>
+							</div>
+							<div class="columns twelve">
+								<label>Please list any advertising agencies we may need to coordinate with.
+									<textarea name="sponsor_other_agencies" id="" cols="30" rows="2"></textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Contact Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="contact_name" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Position
+									<input type="text" name="contact_position" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Email
+									<!-- <input type="email" placeholder=""> -->
+									<input type="email" name="username" id="email" />
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Phone
+									<input type="tel" name="contact_phone" placeholder="">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Agreements</legend>
+							<div class="columns twelve">
+								<label>I accept the <a href="terms.php">Terms of Service</a>
+									<input type="checkbox" name="accept_terms" value="y" />
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Create Password</legend>
+							<div class="medium-6 columns">
+								<label>Password
+									<input type="password" name="password" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Confirm Password
+									<input type="password" name="password_confirm" placeholder="">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Register</button>
+				</div>
+
+{/exp:user:register}
+			</div>

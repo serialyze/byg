@@ -1,0 +1,21 @@
+{global_open}
+
+	{if group_title == 'Super Admin'}
+		{sales_nav}
+	{if:elseif group_title == 'Sales'}
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+	{/if}
+
+	{if segment_2=="sponsor"}
+		{sponsor_profile}
+	{if:elseif segment_2=="artist"}
+		{artist_profile}
+	{if:elseif segment_2=="pending"}
+		{pending_profile}
+	{/if}
+
+{global_close}

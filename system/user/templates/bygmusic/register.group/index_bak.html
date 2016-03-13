@@ -1,0 +1,47 @@
+{global_open}
+
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row" id="begin-register"><div class="columns twelve text-center">
+        	<h1>Register</h1>
+        	<div class="button large hollow" id="artist">Artist</div> <div class="button large hollow" id="sponsor">Sponsor</div>
+        </div></div>
+
+        <!-- === REGISTRATION FORMS === -->
+        <div class="row"><div class="columns twelve">
+
+			<!-- === REGISTER SPONSOR === -->
+			{sponsor_register}
+		
+
+			<!-- === REGISTER ARTIST === -->
+			{artist_register}
+
+		</div></div>
+        
+    </div></div>
+
+
+<script>
+	
+	$('.button#artist').click(function() {
+		$(this).toggleClass('hollow');
+		$('#artist-register').toggleClass('hide');
+		if ( !$('#sponsor-register').hasClass('hide') ) {
+			$('#sponsor-register').addClass('hide');
+			$('#sponsor').addClass('hollow');
+		}
+	});
+
+	$('.button#sponsor').click(function() {
+		$(this).toggleClass('hollow');
+		$('#sponsor-register').toggleClass('hide');
+		if ( !$('#artist-register').hasClass('hide') ) {
+			$('#artist-register').addClass('hide');
+			$('#artist').addClass('hollow');
+		}
+	});
+
+</script>
+
+{global_close}

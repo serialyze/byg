@@ -1,0 +1,28 @@
+{global_open}
+
+	{if group_title == 'Sales'}
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+	{/if}
+
+	{if group_title=="Sponsors"}
+		{sponsor_edit}
+	{if:elseif group_title=="Artists"}
+		{if segment_2=='contact'}
+			{artist_edit_contact}
+		{if:elseif segment_2=='bio'}
+			{artist_edit_bio}
+		{if:elseif segment_2=='photo'}
+			{artist_edit_photo}
+		{if:elseif segment_2=='media'}
+			{artist_edit_media}
+		{if:elseif segment_2=='social'}
+			{embed="functional/artist_edit_social"}
+		{/if}
+
+	{/if}
+
+{global_close}

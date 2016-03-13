@@ -1,0 +1,196 @@
+			<!-- === REGISTER ARTIST === -->
+			<div id="artist-register" class="hide">
+{exp:user:register admin_register="yes" group_id="8" required="" return="register/thankyou"}				
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Contact Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="contact_name" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Position
+									<input type="text" name="contact_position" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Email
+									<input type="email" name="username" id="email" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Phone
+									<input type="tel" name="artist_contact_phone" placeholder="">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="screen_name" placeholder="">
+								</label>
+								<label>Genre
+									<select name="artist_genre" id="">
+										{select_artist_genre}
+											<option value="{value}">{value}</option>
+										{/select_artist_genre}
+									</select>
+								</label>
+								
+								<div class="row">
+									<div class=" columns small-8">
+										<label>City
+											<input type="text" name="artist_city" placeholder="">
+										</label>
+									</div>
+									<div class="columns small-4">
+										<label>State
+											<select name="artist_state" id="">
+												{select_artist_state}
+													<option value="{value}">{value}</option>
+												{/select_artist_state}
+											</select>
+										</label>
+									</div>
+								</div>
+
+								<label>Reach
+									<select name="artist_reach" id="">
+										{select_artist_reach}
+											<option value="{value}">{value}</option>
+										{/select_artist_reach}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns end">
+								<label>Members
+									<textarea name="artist_members" id="" cols="30" rows="6" placeholder="Leave blank if solo artist."></textarea>
+								</label>
+								<label>Current Label or Affiliation
+									<input type="text" placeholder="" name="artist_label" id="artist_label">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Bio</legend>
+							<div class="twelve columns">
+								<label>Photo [ get back to this ]
+									<input type="file" placeholder="">
+								</label>
+							</div>
+							<div class="twelve columns">
+								<label>Bio
+									<textarea name="artist_bio" id="artist_bio" cols="30" rows="7"></textarea>
+								</label>
+							</div>
+							<div class="twelve columns">
+								<label>What artists are you inspired by? 
+									<textarea name="artist_influences" id="artist_influences" cols="30" rows="7"></textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Current Sponsorship Activity</legend>
+							<div class="twelve columns">
+								<label>Please, tell us what kinds of sponsorship you are currently accepting.
+									<textarea name="artist_current_sponsorship" id="artist_current_sponsorship" cols="30" rows="7"></textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Media</legend>
+							<div class="twelve columns">
+								<label>Website
+									<input type="text" name="url" id="url" placeholder="">
+								</label>
+							</div>
+							<div class="twelve columns">
+								<label>Links to other Media
+									<textarea name="artist_other_media" id="artist_other_media" cols="30" rows="7" placeholder="Show us what you got!"></textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Social Media [ get back to this ]</legend>
+							<div class="twelve columns">
+								<a href="" class="button"><i class="fi-social-facebook"></i> Connect Facebook</a>
+								<a href="" class="button"><i class="fi-social-twitter"></i> Connect Twitter</a>
+								<a href="" class="button"><i class="fi-social-instagram"></i> Connect Instagram</a>
+								<a href="" class="button"><i class="fi-sound"></i> Connect Soundcloud</a>
+								<a href="" class="button"><i class="fi-social-youtube"></i> Connect Youtube</a>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Tell us about your fans.</legend>
+							<fieldset class="small-12 medium-6 columns">
+								<legend>Gender</legend>
+								<select name="artist_fans_gender">
+									{select_artist_fans_gender}
+										<option value="{value}">{value}</option>
+									{/select_artist_fans_gender}
+								</select>
+							</fieldset>
+							<fieldset class="small-12 medium-6 columns">
+								<legend>Aged</legend>
+								<select name="artist_fans_age">
+									{select_artist_fans_age}
+										<option value="{value}">{value}</option>
+									{/select_artist_fans_age}
+								</select>
+							</fieldset>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Agreements</legend>
+							<div class="columns twelve">
+								<label>I accept the <a href="terms.php">Terms of Service</a>
+									<input type="checkbox" name="accept_terms" value="y" />
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Create Password</legend>
+							<div class="medium-6 columns">
+								<label>Password
+									<input type="password" name="password" id="password" placeholder="">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Confirm Password
+									<input type="password" name="password_confirm"  id="password_confirm" placeholder="">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Submit</button>
+				</div>
+
+{/exp:user:register}
+			</div>

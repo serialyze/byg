@@ -1,0 +1,115 @@
+		<div id="main-wrap"><div id="main">
+
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register">
+				<h1>Edit Bio</h1>
+
+{exp:user:edit return="home/index"}
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="screen_name" placeholder="" value="{screen_name}">
+								</label>
+								<label>Genre
+									<select name="artist_genre" id="">
+										{select_artist_genre}
+											<option value="{value}" {selected}>{value}</option>
+										{/select_artist_genre}
+									</select>
+								</label>
+								
+								<div class="row">
+									<div class=" columns small-8">
+										<label>City
+											<input type="text" name="artist_city" placeholder="" value="{artist_city}">
+										</label>
+									</div>
+									<div class="columns small-4">
+										<label>State
+											<select name="artist_state" id="">
+												{select_artist_state}
+													<option value="{value}" {selected}>{value}</option>
+												{/select_artist_state}
+											</select>
+										</label>
+									</div>
+								</div>
+
+								<label>Reach
+									<select name="artist_reach" id="">
+										{select_artist_reach}
+											<option value="{value}" {selected}>{value}</option>
+										{/select_artist_reach}
+									</select>
+								</label>
+							</div>
+							<div class="medium-6 columns end">
+								<label>Members
+									<textarea name="artist_members" id="" cols="30" rows="6" placeholder="Leave blank if solo artist.">{artist_members}</textarea>
+								</label>
+								<label>Current Label or Affiliation
+									<input type="text" placeholder="" name="artist_label" value="{artist_label}">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Bio</legend>
+							<div class="twelve columns">
+								<label>Bio
+									<textarea name="artist_bio" id="artist_bio" cols="30" rows="7">{artist_bio}</textarea>
+								</label>
+							</div>
+							<div class="twelve columns">
+								<label>What artists are you inspired by? 
+									<textarea name="artist_influences" id="artist_influences" cols="30" rows="7">{artist_influences}</textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Tell us about your fans.</legend>
+							<fieldset class="small-12 medium-6 columns">
+								<legend>Gender</legend>
+								<select name="artist_fans_gender">
+									{select_artist_fans_gender}
+										<option value="{value}" {selected}>{value}</option>
+									{/select_artist_fans_gender}
+								</select>
+							</fieldset>
+							<fieldset class="small-12 medium-6 columns">
+								<legend>Aged</legend>
+								<select name="artist_fans_age">
+									{select_artist_fans_age}
+										<option value="{value}" {selected}>{value}</option>
+									{/select_artist_fans_age}
+								</select>
+							</fieldset>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Current Sponsorship Activity</legend>
+							<div class="twelve columns">
+								<label>Please, tell us what kinds of sponsorship you are currently accepting.
+									<textarea name="artist_current_sponsorship" id="artist_current_sponsorship" cols="30" rows="7">{artist_current_sponsorship}</textarea>
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Update</button>
+				</div>
+
+{/exp:user:edit}
+			</div>
+
+    	</div></div>

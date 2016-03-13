@@ -1,0 +1,45 @@
+		<div id="main-wrap"><div id="main">
+
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register">
+				<h1>Edit Social</h1>
+
+{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+    
+	{exp:channel:form channel="artists" return="home/index" dynamic="no" url_title="{url_title}" class="userform"}
+					<div class="row">
+						<fieldset class="fieldset">
+							<legend>Profiles</legend>
+								<input type="hidden" name="status" id="status" value="open">
+
+								<div class="columns twelve">
+									<label for="">Facebook
+										<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
+									</label>
+									<label for="">Twitter
+										<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
+									</label>
+									<label for="">Instagram
+										<input type="text" name="artist_instagram" id="artist_instagram" value="{artist_instagram}">
+									</label>
+									<label for="">Youtube
+										<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
+									</label>
+									<label for="">Soundcloud
+										<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
+									</label>
+								</div>
+						</fieldset>
+					</div>
+
+					<div class="row">
+						<button type="submit" class="button">Submit</button>
+					</div>
+					
+	{/exp:channel:form}
+
+{/exp:channel:entries}
+
+			</div>
+
+    	</div></div>

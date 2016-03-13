@@ -1,0 +1,39 @@
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row"><div class="columns twelve"><h1>Pending Profile</h1></div></div>
+
+        <!-- <div class="row"><div class="columns twelve sales text-center">
+			<h5>Approve this sponsor?</h5>
+			<input type="radio" name="approve" value="" id="yes" required><label for="yes">Yes</label>
+			<input type="radio" name="approve" value="" id="no"><label for="no">No</label>
+			<br>
+			<div class="button">Submit</div>
+		</div></div> -->
+
+{exp:user:profile dynamic="yes"}
+        <div class="row">
+        	<div class="columns twelve">
+        		<h2>{screen_name} </h2>
+                <h6>{if requested_group == '8'}Sponsor{if:else}Artist{/if}</h6>
+        	</div>
+        </div>
+
+        <div class="row">
+        	<div class="columns small-12 medium-4">
+        		<h3>Contact Information</h3>
+				<ul>
+					<li>{contact_name}</a></li>
+					<li><i class="fi-mail"></i> <a href="mailto:{email}">{email}</a></li>
+					<li><i class="fi-telephone"></i> {contact_phone}</li>
+				</ul>
+        	</div>
+        	<div class="columns small-12 medium-8">
+        		<h3>Marketing Details</h3>
+        		<ul>
+        			<li>Actions required : {user_needs}</li>
+        		</ul>
+        	</div>
+        </div>
+{/exp:user:profile}
+        
+    </div></div>

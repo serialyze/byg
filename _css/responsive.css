@@ -1,0 +1,54 @@
+/****************************************
+
+Site		    basic responsive template
+Author		    monica christopher	
+
+TOC
+1. Desktop : Default Layout
+2. Tablet : Tablet (portrait) Layout - 768px
+3. Mobile : Mobile Layout - 320px
+
+NOTE : this line must be included in the <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+/***************************************/
+
+/* 1. Desktop */
+
+#wrap   			{  }
+
+#head-wrap          {  }
+#navi-wrap          {  }
+#main-wrap          {  }
+#foot-wrap          {  }
+
+
+/* 2. Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+#wrap   			{  }
+
+#head-wrap          {  }
+#navi-wrap          {  }
+#main-wrap          {  }
+#foot-wrap          {  }
+
+}
+
+
+/* 3. Mobile */
+@media only screen and (max-width: 767px) {
+	
+#wrap   			{  }
+
+#head-wrap          {  }
+#navi-wrap          {  }
+#main-wrap          {  }
+#foot-wrap          {  }
+
+}
+
+
+
+
+

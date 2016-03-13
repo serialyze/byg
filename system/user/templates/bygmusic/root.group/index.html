@@ -1,0 +1,53 @@
+{global_open}
+
+<link rel="stylesheet" href="/_css/home.css" />
+
+    <div id="main-wrap" class="home"><div id="main">
+        
+        <div class="row">
+        	<div class="columns twelve text-center">
+        		<h1>Welcome to Bygmusic.</h1>
+        		<h3>We're here to help.</h3>
+                <h5>Watch this video to see how.</h5>
+
+				<iframe width="420" height="315" src="https://www.youtube.com/embed/__zoCMZVN9w?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+                <h6>Sounds good, right?</h6>
+				
+				<br><div class="button hollow" id="login">Login</div> <a href="{path='/register'}" class="button" id="register">Register</a>
+            </div>
+        </div>
+
+        <div class="row hide" id="welcome-login">
+            <div class="columns twelve">
+
+{exp:member:login_form return="home/index"}
+                    <div class="row">
+                        <div class="small-12 medium-5 columns">
+                            <input type="text" placeholder="Email Address" name="username" id="username">
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            <input type="password" placeholder="Password" name="password" id="password">
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <input type="submit" name="submit" value="Submit" class="button">
+                        </div>
+                    </div>
+{/exp:member:login_form}
+
+            </div>
+        </div>
+        
+    </div></div>
+
+<script>
+    
+    $('.button#login').click(function() {
+        $(this).toggleClass('hollow');
+        $('.button#register').toggleClass('hollow');
+        $('#welcome-login').toggleClass('hide');
+    });
+
+</script>
+
+{global_close}

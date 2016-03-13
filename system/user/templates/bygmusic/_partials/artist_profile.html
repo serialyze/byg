@@ -1,0 +1,122 @@
+    <div id="main-wrap"><div id="main">
+        
+        <div class="row"><div class="columns twelve">
+        	<h1>Artist Profile</h1>
+        </div></div>
+
+		<!-- <div class="row"><div class="columns twelve sales text-center">
+			<h5>Approve this artist?</h5>
+			<input type="radio" name="approve" value="" id="yes" required><label for="yes">Yes</label>
+			<input type="radio" name="approve" value="" id="no"><label for="no">No</label>
+			<br>
+			<div class="button">Submit</div>
+		</div></div> -->
+
+{exp:user:profile dynamic="yes"}
+		<div class="row">
+			<div class="columns small-12 medium-6">
+		{exp:channel:entries channel="artists" dynamic="no" search:author_id="{segment_3}" limit="1"}
+                <img src="{artist_bio_photo}" alt="">
+        {/exp:channel:entries}
+				<p><strong>Members :</strong> {artist_members}</p>
+			</div>
+			<div class="columns small-12 medium-6">
+				<h2>{screen_name}</h2>
+				{artist_bio}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="columns small-12 medium-3">
+				<h4>Artist Details</h4>
+				<ul>
+					<li>Genre : {artist_genre}</li>
+					<li>Reach : {artist_reach}</li>
+					<li>Fans : {artist_fans_gender} / {artist_fans_age}</li>
+				</ul>
+			</div>
+		{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+			<div class="columns small-12 medium-3" style="background: rgba(255, 0, 255, .25);">
+				<h4>Social / Followers</h4>
+				<ul>
+					{if url}<li><a href="{url}"><i class="fi-home"></i> {url}</a></li>{/if}
+                    {if artist_facebook}<li><a href="{artist_facebook}" target="_blank"><i class="fi-social-facebook"></i> Facebook</a> / ???</li>{/if}
+                    {if artist_twitter}<li><a href="{artist_twitter}" target="_blank"><i class="fi-social-twitter"></i> Twitter</a> / ???</li>{/if}
+                    {if artist_instagram}<li><a href="{artist_instagram}" target="_blank"><i class="fi-social-instagram"></i> Instagram</a> / ???</li>{/if}
+                    {if artist_youtube}<li><a href="{artist_youtube}" target="_blank"><i class="fi-social-youtube"></i> Youtube</a> / ???</li>{/if}
+                    {if artist_soundcloud}<li><a href="{artist_soundcloud}" target="_blank"><i class="fi-sound"></i> Soundcloud</a> / ???</li>{/if}
+				</ul>
+			</div>
+			<div class="columns small-12 medium-3">
+				<h4>Featured media</h4>
+				<ul>
+            {artist_other_media}
+                    <li><a href="{artist_other_media:link_url}">{artist_other_media:link_title}</a></li>
+            {/artist_other_media}
+				</ul>
+			</div>
+		{/exp:channel:entries}
+
+			<div class="columns small-12 medium-3">
+				<h4>Influences</h4>
+				{artist_influences}
+			</div>
+		</div>
+{/exp:user:profile}
+
+{if group_title=="Sales"}
+		<hr>
+
+		<div class="row sales">
+{exp:user:profile dynamic="yes"}
+			<div class="columns small-12 medium-3 medium-push-9">
+				<h3>Contact</h3>
+				<ul>
+					<li>Name : {contact_name}{if contact_position}, {contact_position}{/if}</li>
+					<li>Email : <a href="mailto:{username}">{username}</a></li>
+					<li>Phone : {contact_phone}</li>
+				</ul>
+			</div>
+{/exp:user:profile}
+
+			<div class="columns small-12 medium-9 medium-pull-3">
+				<h3>Notes</h3>
+{exp:channel:form channel="notes" return="/profile/{segment_2}/{segment_3}"}
+				<div class="input-group">
+					<input type="hidden" name="title" id="title" value="Artist Note - {segment_3} - {current_time}"/>
+					<input type="hidden" name="note_member_id" id="note_member_id" value="{segment_3}"/>
+					<input type="hidden" name="status" id="status" value="open">
+					<input class="input-group-field" type="text" placeholder="New note" name="note_copy" id="note_copy"/>
+					<div class="input-group-button">
+						<input type="submit" class="button" value="Submit"/>
+					</div>
+				</div>
+{/exp:channel:form}
+				<table class="hover">
+					<tr>
+						<th>Note</th>
+						<th width="150">Date / Author</th>
+					</tr>
+{exp:channel:entries channel="notes" dynamic="no" require_entry="yes" search:note_member_id="={segment_3}"}
+					<tr>
+						<td>[ {note_member_id} ] {note_copy}</td>
+						<td>
+							{entry_date format="%m.%d.%Y"} <br>
+							{author}
+						</td>
+					</tr>
+					{if no_results}
+						<tr><td colspan="2">There are no notes.</td></tr>
+					{/if}
+{/exp:channel:entries}
+				</table>
+			</div>
+		</div>
+{/if}
+
+
+		<div class="row">
+			<div class="columns twelve"><a href="/browse/artists" class="button tiny">Back to List</a></div>
+		</div>
+   
+    </div></div>

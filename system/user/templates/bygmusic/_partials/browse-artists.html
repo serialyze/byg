@@ -1,0 +1,53 @@
+        <div class="row"  style="background: rgba(255, 0, 255, .25);">
+            <div class="columns medium-2">
+                <select name="" id="">
+                    <option value="">-Genre-</option>
+                    <option value="">Rock</option>
+                    <option value="">Punk</option>
+                    <option value="">Metal</option>
+                    <option value="">Hip Hop</option>
+                    <option value="">etc</option>
+                </select>
+            </div>
+            <div class="columns medium-2">
+                <select name="" id="">
+                    <option value="">-Demographic-</option>
+                    <option value="">18 - 34 Male</option>
+                    <option value="">18 - 34 Female</option>
+                    <option value="">35 - 54 Male</option>
+                    <option value="">35 - 54 Female</option>
+                    <option value="">etc</option>
+                </select>
+            </div>
+            <div class="columns medium-2 end">
+                <select name="" id="">
+                    <option value="">-Region-</option>
+                    <option value="">Los Angeles, CA</option>
+                    <option value="">etc</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row"><div class="columns twelve">
+        	<table class="hover">
+        		
+        		<tr>
+        			<th>Name</th>
+        			<th width="150">City</th>
+        			<th width="100">Reach</th>
+        			<th width="100">Genre</th>
+        			<th width="150">Followers</th>
+        		</tr>
+
+{exp:user:users group_id="8" dynamic="no"}
+        		<tr>
+        			<td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
+        			<td>{artist_city}, {artist_state}</td>
+        			<td>{artist_reach}</td>
+        			<td>{artist_genre}</td>
+        			<td>[ follower counts ]</td>
+        		</tr>
+{/exp:user:users}
+
+        	</table>
+        </div></div>

@@ -1,0 +1,41 @@
+		<div id="main-wrap"><div id="main">
+
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register">
+				<h1>Edit Contact Information</h1>
+
+{exp:user:edit return="home/index"}
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Contact Information</legend>
+							<div class="medium-6 columns">
+								<label>Name
+									<input type="text" name="contact_name" placeholder="" value="{contact_name}">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Position
+									<input type="text" name="contact_position" placeholder="" value="{contact_position}">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Email
+									<input type="email" name="username" id="email" placeholder="" value="{username}">
+								</label>
+							</div>
+							<div class="medium-6 columns">
+								<label>Phone
+									<input type="tel" name="contact_phone" placeholder="" value="{contact_phone}">
+								</label>
+							</div>
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Update</button>
+				</div>
+
+{/exp:user:edit}
+			</div>
+
+    	</div></div>

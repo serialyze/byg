@@ -1,0 +1,32 @@
+		<div id="main-wrap"><div id="main">
+
+			<!-- === REGISTER SPONSOR === -->
+			<div action="" id="sponsor-register">
+				<h1>Edit Media</h1>
+
+{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+    
+	{exp:channel:form channel="artists" return="home/index" dynamic="no" url_title="{url_title}" class="userform"}
+					<div class="row">
+						<div class="row">
+						<fieldset class="fieldset">
+							<legend>Artist Media</legend>
+								<input type="hidden" name="status" id="status" value="open">
+
+								<div class="small-12 columns">
+									{field:artist_other_media}
+								</div>
+						</fieldset>
+					</div>
+
+					<div class="row">
+						<button type="submit" class="button">Submit</button>
+					</div>
+					
+	{/exp:channel:form}
+
+{/exp:channel:entries}
+
+			</div>
+
+    	</div></div>

@@ -1,0 +1,31 @@
+{global_open}
+
+	{if group_title == 'Sales'}
+		{sales_nav}
+	{if:elseif group_title == 'Super Admin'}
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{/if}
+
+	<div id="main-wrap"><div id="main">
+        
+        <div class="row"><div class="columns twelve">	
+			{if group_title == 'Sales'}
+				<h1>{username}, Browse the {segment_2}</h1>
+			{if:elseif group_title == 'Super Admin'}
+				<h1>{username}, Browse the {segment_2}</h1>
+			{if:elseif group_title == 'Sponsors'}
+				{exp:user:profile}<h1>{sponsor_contact_name}, Check out some Artists.</h1>{/exp:user:profile}
+			{/if}
+        </div></div>
+
+		{if segment_2=='sponsors'}
+			{browse-sponsors}
+		{if:else}
+			{browse-artists}
+		{/if}
+        
+    </div></div>
+
+{global_close}
