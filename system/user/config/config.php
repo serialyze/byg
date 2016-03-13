@@ -35,8 +35,10 @@ $config['cookie_prefix'] = '';
 $config['cookie_httponly'] = 'y';
 
 $config['multiple_sites_enabled'] = 'n';
+$config['index_page'] = 'index.php';
 
 // END EE config items
+
 
 
 /*
