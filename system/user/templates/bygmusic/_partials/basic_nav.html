@@ -1,0 +1,30 @@
+    <div id="navi-wrap"><div id="navi">
+        
+		<div class="row">
+			<div class="row columns twelve"><ul class="menu">
+				<li><a href="/home">BYGMusic</a></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a class="button hollow" id="login">Login</a></li>
+				<li><a href="{path='/register'}" class="button" id="register">Register</a></li>
+			</ul></div>
+		</div>
+
+		<div class="row hide" id="welcome-login">
+
+{exp:member:login_form return="home/index"}
+                    <div class="row">
+                        <div class="small-12 medium-5 columns">
+                            <input type="text" placeholder="Email Address" name="username" id="username">
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            <input type="password" placeholder="Password" name="password" id="password">
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <input type="submit" name="submit" value="Submit" class="button">
+                        </div>
+                    </div>
+{/exp:member:login_form}
+
+        </div>
+
+    </div></div>

@@ -15,7 +15,10 @@
 {exp:user:profile dynamic="yes"}
 		<div class="row">
 			<div class="columns small-12 medium-6">
-		{exp:channel:entries channel="artists" dynamic="no" search:author_id="{segment_3}" limit="1"}
+		{exp:channel:entries channel="artists" author_id="{segment_3}" limit="1"}
+			{if no_results}
+				<p>This user has not yet uploaded a photo.</p>
+			{/if}
                 <img src="{artist_bio_photo}" alt="">
         {/exp:channel:entries}
 				<p><strong>Members :</strong> {artist_members}</p>
@@ -35,27 +38,37 @@
 					<li>Fans : {artist_fans_gender} / {artist_fans_age}</li>
 				</ul>
 			</div>
-		{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
-			<div class="columns small-12 medium-3" style="background: rgba(255, 0, 255, .25);">
+
+			<div class="columns small-12 medium-3">
 				<h4>Social / Followers</h4>
+		{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" author_id="{member_id}" limit="1"}
+			{if no_results}
+				<p>This user has not yet added their social information.</p>
+			{/if}
 				<ul>
 					{if url}<li><a href="{url}"><i class="fi-home"></i> {url}</a></li>{/if}
-                    {if artist_facebook}<li><a href="{artist_facebook}" target="_blank"><i class="fi-social-facebook"></i> Facebook</a> / ???</li>{/if}
-                    {if artist_twitter}<li><a href="{artist_twitter}" target="_blank"><i class="fi-social-twitter"></i> Twitter</a> / ???</li>{/if}
-                    {if artist_instagram}<li><a href="{artist_instagram}" target="_blank"><i class="fi-social-instagram"></i> Instagram</a> / ???</li>{/if}
-                    {if artist_youtube}<li><a href="{artist_youtube}" target="_blank"><i class="fi-social-youtube"></i> Youtube</a> / ???</li>{/if}
-                    {if artist_soundcloud}<li><a href="{artist_soundcloud}" target="_blank"><i class="fi-sound"></i> Soundcloud</a> / ???</li>{/if}
+                    {if artist_facebook}<li><a href="{artist_facebook}" target="_blank"><i class="fi-social-facebook"></i> Facebook</a> / {artist_facebook_count}</li>{/if}
+                    {if artist_twitter}<li><a href="{artist_twitter}" target="_blank"><i class="fi-social-twitter"></i> Twitter</a> / {artist_twitter_count}</li>{/if}
+                    {if artist_instagram}<li><a href="{artist_instagram}" target="_blank"><i class="fi-social-instagram"></i> Instagram</a> / {artist_instagram_count}</li>{/if}
+                    {if artist_youtube}<li><a href="{artist_youtube}" target="_blank"><i class="fi-social-youtube"></i> Youtube</a> / {artist_youtube_count}</li>{/if}
+                    {if artist_soundcloud}<li><a href="{artist_soundcloud}" target="_blank"><i class="fi-sound"></i> Soundcloud</a> / {artist_soundcloud_count}</li>{/if}
 				</ul>
+			{/exp:channel:entries}
 			</div>
 			<div class="columns small-12 medium-3">
 				<h4>Featured media</h4>
+		{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" author_id="{member_id}" limit="1"}
+			{if no_results}
+				<p>This user has not yet added any media.</p>
+			{/if}
 				<ul>
             {artist_other_media}
                     <li><a href="{artist_other_media:link_url}">{artist_other_media:link_title}</a></li>
             {/artist_other_media}
 				</ul>
-			</div>
 		{/exp:channel:entries}
+			</div>
+		
 
 			<div class="columns small-12 medium-3">
 				<h4>Influences</h4>
@@ -64,7 +77,7 @@
 		</div>
 {/exp:user:profile}
 
-{if group_title=="Sales"}
+{if group_title=="Super Admin"}
 		<hr>
 
 		<div class="row sales">

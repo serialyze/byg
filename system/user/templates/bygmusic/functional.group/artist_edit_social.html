@@ -1,10 +1,103 @@
+<?php
+
+include("_includes/SocialCounter.php");
+$sc = new SocialCounter();
+
+
+?>
+
+
+
 		<div id="main-wrap"><div id="main">
 
-			<!-- === REGISTER SPONSOR === -->
-			<div action="" id="sponsor-register">
-				<h1>Edit Social</h1>
+			<div class="row">
+	        	<div class="columns twelve">
+	                <h1>Edit Social</h1>
+	            </div>
+	        </div>
 
-{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" search:author_id="{member_id}" limit="1"}
+{exp:channel:entries channel="artists" dynamic="no" require_entry="yes" author_id="CURRENT_USER" limit="1"}
+
+	{if no_results}
+
+	<div class="row"><div class="columns twelve"><p>you have not started your profile yet. let's get started!</p></div></div>
+
+		{exp:channel:form channel="artists" return="home/index" class="userform"}
+						<input type="hidden" name="status" id="status" value="open">
+						<input type="hidden" name="title" id="title" value="{screen_name}">
+
+						<div class="row">
+							<fieldset class="fieldset">
+								<legend>Profiles</legend>
+									<input type="hidden" name="status" id="status" value="open">
+
+									<div class="columns small-9">
+										<label for="">Facebook 
+											<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Facebook Count 
+											<input type="text" name="artist_facebook_count" id="artist_facebook_count" value="<?php echo $sc->GetFacebookCount({artist_facebook}); ?>" disabled>
+										</label>
+									</div>
+
+									<div class="columns small-9">
+										<label for="">Twitter
+											<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Twitter Count 
+											<input type="text" name="artist_twitter_count" id="artist_twitter_count" value="<?php echo $sc->GetTwitterCount({artist_twitter}); ?>" disabled>
+										</label>
+									</div>
+
+									<div class="columns small-9">
+										<label for="">Instagram
+											<input type="text" name="artist_instagram" id="artist_instagram" value="{artist_instagram}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Instagram Count
+											<input type="text" name="artist_instagram_count" id="artist_instagram_count" value="{artist_instagram_count}">
+										</label>
+									</div>
+
+									<div class="columns small-9">
+										<label for="">Youtube 
+											<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Youtube Count 
+											<input type="text" name="artist_youtube_count" id="artist_youtube_count" value="<?php echo $sc->GetYouTubeCount({artist_youtube}); ?>" disabled>
+										</label>
+									</div>
+
+									<div class="columns small-9">
+										<label for="">Soundcloud 
+											<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Soundcloud Count 
+											<input type="text" name="artist_soundcloud_count" id="artist_soundcloud_count" value="<?php echo $sc->GetSoundcloudCount({artist_soundcloud}); ?>" disabled>
+										</label>
+									</div>
+
+							</fieldset>
+						</div>
+
+						<div class="row hide">{field:artist_other_media}</div>
+
+						<div class="row">
+							<button type="submit" class="button">Submit</button>
+						</div>
+						
+		{/exp:channel:form}
+
+	{/if}
     
 	{exp:channel:form channel="artists" return="home/index" dynamic="no" url_title="{url_title}" class="userform"}
 					<div class="row">
@@ -12,25 +105,65 @@
 							<legend>Profiles</legend>
 								<input type="hidden" name="status" id="status" value="open">
 
-								<div class="columns twelve">
-									<label for="">Facebook
+								<div class="columns small-9">
+									<label for="">Facebook 
 										<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
 									</label>
+								</div>
+								<div class="columns small-3">
+									<label for="">Facebook Count 
+										<input type="text" name="artist_facebook_count" id="artist_facebook_count" value="<?php echo $sc->GetFacebookCount({artist_facebook}); ?>" >
+									</label>
+								</div>
+
+								<div class="columns small-9">
 									<label for="">Twitter
 										<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
 									</label>
+								</div>
+								<div class="columns small-3">
+									<label for="">Twitter Count 
+										<input type="text" name="artist_twitter_count" id="artist_twitter_count" value="<?php echo $sc->GetTwitterCount({artist_twitter}); ?>" >
+									</label>
+								</div>
+
+								<div class="columns small-9">
 									<label for="">Instagram
 										<input type="text" name="artist_instagram" id="artist_instagram" value="{artist_instagram}">
 									</label>
-									<label for="">Youtube
+								</div>
+								<div class="columns small-3">
+									<label for="">Instagram Count
+										<input type="text" name="artist_instagram_count" id="artist_instagram_count" value="{artist_instagram_count}">
+									</label>
+								</div>
+
+								<div class="columns small-9">
+									<label for="">Youtube 
 										<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
 									</label>
-									<label for="">Soundcloud
+								</div>
+								<div class="columns small-3">
+									<label for="">Youtube Count 
+										<input type="text" name="artist_youtube_count" id="artist_youtube_count" value="<?php echo $sc->GetYouTubeCount({artist_youtube}); ?>" >
+									</label>
+								</div>
+
+								<div class="columns small-9">
+									<label for="">Soundcloud 
 										<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
 									</label>
 								</div>
+								<div class="columns small-3">
+									<label for="">Soundcloud Count 
+										<input type="text" name="artist_soundcloud_count" id="artist_soundcloud_count" value="<?php echo $sc->GetSoundcloudCount({artist_soundcloud}); ?>" >
+									</label>
+								</div>
+
 						</fieldset>
 					</div>
+
+					<div class="row hide">{field:artist_other_media}</div>
 
 					<div class="row">
 						<button type="submit" class="button">Submit</button>
@@ -39,7 +172,5 @@
 	{/exp:channel:form}
 
 {/exp:channel:entries}
-
-			</div>
 
     	</div></div>

@@ -191,29 +191,29 @@ class User extends AddonBuilder
 		//  Welcome Email
 		// --------------------------------------------
 
-		if (ee()->config->item('req_mbr_activation') == 'manual' AND
-			ee()->db->table_exists('exp_user_welcome_email_list'))
-		{
-			$emails	= $this->fetch('WelcomeEmailList')
-				->with('Member')
-				->filter('email_sent', 'n')
-				->limit(2)
-				->all();
+		// if (ee()->config->item('req_mbr_activation') == 'manual' AND
+		// 	ee()->db->table_exists('exp_user_welcome_email_list'))
+		// {
+		// 	$emails	= $this->fetch('WelcomeEmailList')
+		// 		->with('Member')
+		// 		->filter('email_sent', 'n')
+		// 		->limit(2)
+		// 		->all();
 
-			foreach ($emails as $email)
-			{
-				if ($email->group_id == $email->Member->group_id) continue;
+		// 	foreach ($emails as $email)
+		// 	{
+		// 		if ($email->group_id == $email->Member->group_id) continue;
 
-				$row[$email->member_id]	= array(
-					'screen_name'	=> $email->Member->screen_name,
-					'email'			=> $email->Member->email,
-					'username'		=> $email->Member->username,
-					'member_id'		=> $email->Member->member_id
-				);
+		// 		$row[$email->member_id]	= array(
+		// 			'screen_name'	=> $email->Member->screen_name,
+		// 			'email'			=> $email->Member->email,
+		// 			'username'		=> $email->Member->username,
+		// 			'member_id'		=> $email->Member->member_id
+		// 		);
 
-				$this->welcome_email($row);
-			}
-		}
+		// 		$this->welcome_email($row);
+		// 	}
+		// }
 
 		//--------------------------------------------
 		//	System lang directory

@@ -7,7 +7,7 @@
         </div>
 
         <div class="row">
-            <div class="columns small-12" style="background: rgba(255, 0, 255, .25);">
+            <div class="columns small-12">
                 <h5>Waiting Approval</h5>
                 <table class="hover">
                     <tr>
@@ -17,7 +17,7 @@
                     </tr>
 {exp:user:users group_id="4"}
                     {if user_no_results}
-                        <tr><td colspan="3">Sorry, no results were found.</td></tr>
+                        <tr><td colspan="3">No new registrations at this time.</td></tr>
                     {/if}
                     <tr>
                         <td><a href="/profile/pending/{member_id}">{screen_name}</a></td>
@@ -38,7 +38,7 @@
                         <th>Name</th>
                         <th width="100">Added</th>
                     </tr>
-{exp:user:users group_id="8" limit="5"}
+{exp:user:users group_id="8" limit="10" orderby="join_date" sort="desc"}
                     <tr>
                         <td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
                         <td>{join_date format="%m.%d.%y"}</td>

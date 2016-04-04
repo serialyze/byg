@@ -15,10 +15,12 @@ Colors
 /***************************************/
 
 /* 1. Global Styles */
-*					{  }
+*					{ font-size: 15px; }
+
+h1, h2, h3, h4, h5, h6, p, a, th, td 	{ font-family: 'Muli', sans-serif; font-weight: 300; }
 
 
-a:link, a:visited	{  }
+a:link, a:visited	{ font-size: inherit; font-weight: 400; }
 a:hover				{  }
 
 #wrap   			{ margin: 0 3vw; }
@@ -26,12 +28,15 @@ a:hover				{  }
 #head-wrap          {  }
 #navi-wrap          {  }
 #main-wrap          {  }
-#foot-wrap          {  }
+#foot-wrap          { padding: 40px 0 20px; }
 
 i 					{ color: inherit; }
 
-th 					{ text-align: left; }
+th 					{ text-align: left; font-weight: 400; }
 td 					{ vertical-align: top; border: 1px solid #ccc; }
+
+/* 1b. Utilities */
+.underline 			{ text-decoration: underline; }
 
 
 /* 2. Header Styles */
@@ -40,6 +45,7 @@ td 					{ vertical-align: top; border: 1px solid #ccc; }
 
 /* 3. Nav Styles */
 #navi               { padding: 1.5rem 0; }
+#navi .button 		{ padding: 5px 10px; margin: 0 20px; }
 
 
 /* 4. Content Styles */
@@ -47,17 +53,23 @@ td 					{ vertical-align: top; border: 1px solid #ccc; }
 
 .sales 				{ margin-bottom: 2rem; }
 
-#welcome-login form 		{ margin: 2rem 20%; }
+#welcome-login form 		{ margin: 1rem 20%; }
 
 #begin-register .button 	{ width: 10rem; margin: 0 1rem; }
+
+.terms 				{  }
+.terms h1, .terms h5, .terms h4 	{ text-align: center; }
+.terms ol ol 		{ margin-top: 0.5em; list-style: upper-alpha; }
+.terms ol li 		{ margin-bottom: .5em; }
 
 
 
 /* 5. Footer Styles */
-#foot			    {  }
+#foot 				{  }
+#foot ul li			{ font-size: 0.75em; }
 
 
 
 
 
-.err-wrap { display: none; }
+/*.err-wrap { display: none; }*/

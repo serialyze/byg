@@ -1,10 +1,22 @@
 {global_open}
 
+	{if group_title == 'Super Admin'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sales'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+	{if:else}
+		{basic_nav}
+	{/if}
+
     <div id="main-wrap"><div id="main">
         
         <div class="row" id="begin-register"><div class="columns twelve">
         	<h1>Registration</h1>
-        	<p>This is an even better explanation of why you want to joing BYG Music. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor tellus, suscipit vitae auctor iaculis, hendrerit at justo. Proin vitae pellentesque dui. Integer sed urna viverra, luctus mauris non, facilisis ante. Aliquam sit amet nulla eu ligula varius viverra. Fusce semper tortor vitae nunc efficitur aliquam. Sed ultricies placerat interdum. Donec est orci, efficitur in hendrerit ac, pulvinar sit amet lorem.</p>
+        	<p>This is an even better explanation of why you want to joing BYG Music.</p>
         </div></div>
 
 <!-- *------------ registration success messaging ------------* -->
@@ -81,7 +93,7 @@
 							<label>Confirm Password<input type="password" name="password_confirm"  id="password_confirm" placeholder=""></label>
 						</div>
 						<div class="small-12 medium-6 columns end">
-							<input type="checkbox" name="accept_terms" value="y" /><label>I accept the <a href="terms.php">Terms of Service</a></label>
+							<input type="checkbox" name="accept_terms" value="y" /><label>I accept the <a href="/terms">Terms of Service</a></label>
 						</div>
 					</div>
 				</fieldset>

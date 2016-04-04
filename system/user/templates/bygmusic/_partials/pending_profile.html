@@ -13,8 +13,8 @@
 {exp:user:profile dynamic="yes"}
         <div class="row">
         	<div class="columns twelve">
-        		<h2>{screen_name} </h2>
-                <h6>{if requested_group == '8'}Sponsor{if:else}Artist{/if}</h6>
+        		<h2>{screen_name}</h2>
+                <h6>{if requested_group == '8'}Artist{if:else}Sponsor{/if}</h6>
         	</div>
         </div>
 
@@ -30,10 +30,23 @@
         	<div class="columns small-12 medium-8">
         		<h3>Marketing Details</h3>
         		<ul>
-        			<li>Actions required : {user_needs}</li>
+                    <li>Actions required : {user_needs}</li>
         		</ul>
         	</div>
         </div>
+
+    {exp:user:edit return="home/index"}
+        <div class="row">
+            <div class="columns twelve">
+                <input type="hidden" name="member_id" id="member_id" value="{member_id}">
+                <input type="hidden" name="group_id" id="group_id" value="{requested_group}">
+                <button type="submit" class="button">Approve</button>
+                <a href="/home" class="button">Later</a>
+            </div>
+        </div>
+    {/exp:user:edit}
 {/exp:user:profile}
+
+
         
     </div></div>

@@ -1,40 +1,41 @@
 {global_open}
 
+    {if group_title == 'Super Admin'} 
+        {sales_nav}
+    {if:elseif group_title == 'Sales'} 
+        {sales_nav}
+    {if:elseif group_title == 'Sponsors'}
+        {sponsor_nav}
+    {if:elseif group_title == 'Artists'}
+        {artist_nav}
+    {if:else}
+        {basic_nav}
+    {/if}
+
 <link rel="stylesheet" href="/_css/home.css" />
 
     <div id="main-wrap" class="home"><div id="main">
         
         <div class="row">
-        	<div class="columns twelve text-center">
-        		<h1>Welcome to Bygmusic.</h1>
-        		<h3>We're here to help.</h3>
-                <h5>Watch this video to see how.</h5>
+        	<div class="columns small-12 medium-8 medium-offset-2">
+        		<h4>We heard you and we like your work...</h4>
+                <h1>Welcome to BygMusic.</h1>
+        		
+                <h5>WHO WE ARE</h5>
+                <p>BYGMUSIC is a new, exciting music company that will bridge the technology and old-school artist development. We are currently signing up the best new artists in the country based on talent, fan reach and potential. Our goal is to provide artist support and growth while keeping the integrity of creative output and protecting all ownership for the artist. BYGMUSIC and its sponsors value all artists of vision - large or small, established or new, and have created a new form of artist support.</p>
 
-				<iframe width="420" height="315" src="https://www.youtube.com/embed/__zoCMZVN9w?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <h5>WHAT WE OFFER</h5>
+                <p>We offer a new platform for artists to gain support through sponsorship. Simply put, our platform pays artists for supporting brands and their messaging. BYGMUSIC matches the perfect artist with the perfect brand for a natural fit. This is a revolutionary concept that fills the need for artist support that was formerly provided by record companies, agents, and managers.</p>
 
-                <h6>Sounds good, right?</h6>
+                <h5>WHY THIS WORKS</h5>
+                <p>Through necessity, artists today have learned to become self-sufficient in booking shows, promoting upcoming releases and creating a digital following. Through the power of music, social media and hard work, many artists have earned a fan base which is eager to support them and spread their message. Through sponsorship, BYGMUSIC provides fans a way to give back to the artist they love.</p>
+                
+                <h5>Bottom Line:  We want artists to make money for the art they are creating.</h5>
+                <p>Sign up and we will get to work finding the right brand for you. You will be under no obligation until you decide to partner and start getting the support you need.</p>
+
+                <h6>In Partnership, <br>Krish Sharma, Founder / CEO</h6>
 				
-				<br><div class="button hollow" id="login">Login</div> <a href="{path='/register'}" class="button" id="register">Register</a>
-            </div>
-        </div>
-
-        <div class="row hide" id="welcome-login">
-            <div class="columns twelve">
-
-{exp:member:login_form return="home/index"}
-                    <div class="row">
-                        <div class="small-12 medium-5 columns">
-                            <input type="text" placeholder="Email Address" name="username" id="username">
-                        </div>
-                        <div class="small-12 medium-5 columns">
-                            <input type="password" placeholder="Password" name="password" id="password">
-                        </div>
-                        <div class="small-12 medium-2 columns">
-                            <input type="submit" name="submit" value="Submit" class="button">
-                        </div>
-                    </div>
-{/exp:member:login_form}
-
+                <br><!-- <div class="button hollow" id="login">Login</div>  --><a href="{path='/register'}" class="button" id="register">Register</a>
             </div>
         </div>
         

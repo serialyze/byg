@@ -1,0 +1,72 @@
+{global_open}
+
+	{if group_title == 'Super Admin'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sales'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+	{if:else}
+		{basic_nav}
+	{/if}
+
+	<div id="main-wrap"><div id="main" class="faq">
+        
+		<div class="row"><div class="columns twelve">
+			<h1>FAQ</h1>
+
+			{exp:channel:entries channel="faq" sort="asc"}
+				{if no_results}
+					<p>We have no answers yet.</p>
+				{/if}
+	                <h5>{title}</h5>
+	                <p>{answer}</p>
+	                <hr>
+	        {/exp:channel:entries}
+		</div></div>
+        
+    </div></div>
+
+{global_close}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,11 +1,23 @@
 {global_open}
 
+	{if group_title == 'Super Admin'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sales'} 
+		{sales_nav}
+	{if:elseif group_title == 'Sponsors'}
+		{sponsor_nav}
+	{if:elseif group_title == 'Artists'}
+		{artist_nav}
+	{if:else}
+		{basic_nav}
+	{/if}
+
     <div id="main-wrap"><div id="main">
         
         <div class="row">
         	<div class="columns twelve text-center">
-        		<h1>Thanks!</h1>
-        		<h3>We'll be in touch.</h3>
+        		<h1>We're on it!</h1>
+        		<h3>BygMusic will get in touch with you within the day.</h3>
             </div>
         </div>
         
