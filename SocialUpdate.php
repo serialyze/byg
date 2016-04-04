@@ -31,7 +31,7 @@ while ( $row = $rs->fetch_object() ) {
 	$soundcloud_count = $sc->GetSoundcloudCount($soundcloud_id);
 	$youtube_count = $sc->GetYouTubeCount($youtube_id);
 	
-	$updateSql = "UPDATE exp_channel_data SET field_id_10 = $facebook_count, field_id_field_id_11 = $twitter_count, field_id_14 = $soundcloud_id, field_id_13 = $youtube_id WHERE entry_id = $primary_key";
+	$updateSql = "UPDATE exp_channel_data SET field_id_10 = $facebook_count, field_id_field_id_11 = $twitter_count, field_id_14 = $soundcloud_count, field_id_13 = $youtube_count WHERE entry_id = $primary_key";
 	$updateRs = $conn->query($updateSql);
 }
 

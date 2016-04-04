@@ -2,7 +2,38 @@
 
 require_once('TwitterAPIExchange.php'); 
 
-class SocialCounter{
+class SocialCounter{  
+
+/*----- PRIVATE MEMBERS -----*/
+
+    private $social_counter_settings = array( 
+		//twitter       
+		'twitter_user' => '@seejaneworkit',
+		'consumer_key' => 'Tj6OXyNFzKC6aDViqCR4WUIJz',
+		'consumer_secret' => 'oULVGdnJZNpmBT2dWK5sx8cXi4S6WVw2n9xzlqAnhIDgMB94kb',
+		'oauth_access_token' => '51386858-04faURwbwH4YsPef47F5glJB4gLx8BzbuWoZgPj8m',
+		'oauth_access_token_secret' => 'wsL6kg2r6VMQpsaGpDkCtUvoH7m1oUsq414RKk4kNPGZs',
+		
+		//facebook      
+		'facebook_id' => 'darwenstheory',
+		
+		//Google API Key for Google related services
+		'google_api_key' => 'AIzaSyCZaJdB2dK7Tj8VsSJaBY-hvlrBoj6oZJI',
+		
+		//Youtube           
+		'youtube_channel_id' => 'UCfDMgit4HkthQ45fdgI7THA',
+		
+		//Soundcloud
+		'soundcloud_user' => 'kipmoore',
+		'soundcloud_client_id' => 'cbf0c4ebc61a0392bd9f1b5fd6e09faf',
+		'soundcloud_secret' => 'd4175e90f0a06b633e63fdb92640ebfe',
+		
+		//Instagram
+		'instagram_client_id' => 'c6780730da3b45d0a95e0d738a6725ce',
+		'instagram_secret' => '6fa5b47b83944af0905a219b01ad7b6f',
+		'instagram_access_token' => ''
+	);
+	private $last_update_date;
     
 /*----- CONSTRUCTOR -----*/
 
