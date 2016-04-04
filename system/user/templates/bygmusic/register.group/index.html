@@ -42,18 +42,13 @@
 					<div class="row">
 						<input type="hidden" value="4" name="group_id">
 						<div class="small-6 medium-2 columns">
-							<input type="radio" name="requested_group" value="7"> <label for="">Artist</label>
+							<input type="radio" name="requested_group" value="7" id="artistregradio"> <label for="">Artist</label>
 						</div>
 						<div class="small-6 medium-2 columns end">
-							<input type="radio" name="requested_group" value="8"> <label for="">Sponsor</label>
+							<input type="radio" name="requested_group" value="8" id="sponsorregradio"> <label for="">Sponsor</label>
 						</div>
 					</div>
 					{/if}
-					<div class="row">
-						<div class="small-12 medium-6 columns end">
-							<label>Group or Company Name<input type="text" name="screen_name" placeholder=""></label>
-						</div>
-					</div>
 					
 				</fieldset>
 
@@ -72,14 +67,39 @@
 						<div class="small-12 medium-6 columns">
 							<label>Phone<input type="tel" name="artist_contact_phone" placeholder=""></label>
 						</div>
-						<div class="twelve columns">
-							<label>What can we help you with?</label><textarea name="user_needs" id="user_needs" cols="30" rows="4"></textarea>
-						</div>
 						{if segment_2=="key"}
 						<div class="small-12 medium-6 columns end">
 							<label for="">Invitation Key<input type="text" name="key" id="key" value="{key}"></label>
 						</div>
 						{/if}
+					</div>
+				</fieldset>
+
+				<fieldset id="artistreg">
+					<legend>Artist Details</legend>
+					<div class="row">
+						<div class="small-12 medium-6 columns end">
+							<label>Group or Artist Name<input type="text" name="screen_name" placeholder=""></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="twelve columns">
+							<label>Please Enter your Facebook and Twitter profile URLs.</label><textarea name="user_needs" id="user_needs" cols="30" rows="4"></textarea>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset id="sponsorreg">
+					<legend>Sponsor Details</legend>
+					<div class="row">
+						<div class="small-12 medium-6 columns end">
+							<label>Company Name<input type="text" name="screen_name" placeholder=""></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="twelve columns">
+							<label>What can we help you with?</label><textarea name="user_needs" id="user_needs" cols="30" rows="4"></textarea>
+						</div>
 					</div>
 				</fieldset>
 
@@ -103,9 +123,24 @@
 			{/exp:user:register}
 
         {/if}
-
-        
         
     </div></div>
+
+<script>
+
+	$('#artistreg, #sponsorreg').hide();
+
+	$('#artistregradio').click(function() {
+		$('#artistreg').show();
+		$('#sponsorreg').hide();
+    });	
+
+    $('#sponsorregradio').click(function() {
+		$('#artistreg').hide();
+		$('#sponsorreg').show();
+    });	
+
+</script>
+
 
 {global_close}

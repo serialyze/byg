@@ -22,7 +22,7 @@ $sc = new SocialCounter();
 
 	<div class="row"><div class="columns twelve"><p>you have not started your profile yet. let's get started!</p></div></div>
 
-		{exp:channel:form channel="artists" return="home/index" class="userform"}
+		{exp:channel:form channel="artists" return="edit/social" class="userform"}
 						<input type="hidden" name="status" id="status" value="open">
 						<input type="hidden" name="title" id="title" value="{screen_name}">
 
@@ -32,29 +32,25 @@ $sc = new SocialCounter();
 									<input type="hidden" name="status" id="status" value="open">
 
 									<div class="columns small-9">
-										<label for="">Facebook 
+										<label for="">Facebook Page Name
 											<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
 										</label>
 									</div>
 									<div class="columns small-3">
-										<label for="">Facebook Count 
-											<input type="text" name="artist_facebook_count" id="artist_facebook_count" value="<?php echo $sc->GetFacebookCount({artist_facebook}); ?>" disabled>
-										</label>
+										
 									</div>
 
 									<div class="columns small-9">
-										<label for="">Twitter
+										<label for="">Twitter Handle
 											<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
 										</label>
 									</div>
 									<div class="columns small-3">
-										<label for="">Twitter Count 
-											<input type="text" name="artist_twitter_count" id="artist_twitter_count" value="<?php echo $sc->GetTwitterCount({artist_twitter}); ?>" disabled>
-										</label>
+										
 									</div>
 
 									<div class="columns small-9">
-										<label for="">Instagram
+										<label for="">Instagram Handle
 											<input type="text" name="artist_instagram" id="artist_instagram" value="{artist_instagram}">
 										</label>
 									</div>
@@ -64,26 +60,27 @@ $sc = new SocialCounter();
 										</label>
 									</div>
 
-									<div class="columns small-9">
-										<label for="">Youtube 
+									<div class="columns small-6">
+										<label for="">Youtube Channel Name
+											<input type="text" name="artist_youtube_name" id="artist_youtube_name" value="{artist_youtube_name}">
+										</label>
+									</div>
+									<div class="columns small-3">
+										<label for="">Youtube Channel ID
 											<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
 										</label>
 									</div>
 									<div class="columns small-3">
-										<label for="">Youtube Count 
-											<input type="text" name="artist_youtube_count" id="artist_youtube_count" value="<?php echo $sc->GetYouTubeCount({artist_youtube}); ?>" disabled>
-										</label>
+										
 									</div>
 
 									<div class="columns small-9">
-										<label for="">Soundcloud 
+										<label for="">Soundcloud Handle
 											<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
 										</label>
 									</div>
 									<div class="columns small-3">
-										<label for="">Soundcloud Count 
-											<input type="text" name="artist_soundcloud_count" id="artist_soundcloud_count" value="<?php echo $sc->GetSoundcloudCount({artist_soundcloud}); ?>" disabled>
-										</label>
+										
 									</div>
 
 							</fieldset>
@@ -106,7 +103,7 @@ $sc = new SocialCounter();
 								<input type="hidden" name="status" id="status" value="open">
 
 								<div class="columns small-9">
-									<label for="">Facebook 
+									<label for="">Facebook Page Name 
 										<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
 									</label>
 								</div>
@@ -117,7 +114,7 @@ $sc = new SocialCounter();
 								</div>
 
 								<div class="columns small-9">
-									<label for="">Twitter
+									<label for="">Twitter Handle
 										<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
 									</label>
 								</div>
@@ -128,7 +125,7 @@ $sc = new SocialCounter();
 								</div>
 
 								<div class="columns small-9">
-									<label for="">Instagram
+									<label for="">Instagram Handle
 										<input type="text" name="artist_instagram" id="artist_instagram" value="{artist_instagram}">
 									</label>
 								</div>
@@ -138,8 +135,13 @@ $sc = new SocialCounter();
 									</label>
 								</div>
 
-								<div class="columns small-9">
-									<label for="">Youtube 
+								<div class="columns small-6">
+									<label for="">Youtube Channel Name
+										<input type="text" name="artist_youtube_name" id="artist_youtube_name" value="{artist_youtube_name}">
+									</label>
+								</div>
+								<div class="columns small-3">
+									<label for="">Youtube Channel ID
 										<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
 									</label>
 								</div>
@@ -150,7 +152,7 @@ $sc = new SocialCounter();
 								</div>
 
 								<div class="columns small-9">
-									<label for="">Soundcloud 
+									<label for="">Soundcloud Handle
 										<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
 									</label>
 								</div>
