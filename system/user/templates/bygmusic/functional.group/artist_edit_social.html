@@ -1,12 +1,10 @@
 <?php
 
-include("_includes/SocialCounter.php");
-$sc = new SocialCounter();
+	include("_includes/SocialCounter.php");
+	$sc = new SocialCounter();
 
 
 ?>
-
-
 
 		<div id="main-wrap"><div id="main">
 
@@ -20,7 +18,7 @@ $sc = new SocialCounter();
 
 	{if no_results}
 
-	<div class="row"><div class="columns twelve"><p>you have not started your profile yet. let's get started!</p></div></div>
+			<div class="row"><div class="columns twelve"><p>you have not started your profile yet. let's get started!</p></div></div>
 
 		{exp:channel:form channel="artists" return="edit/social" class="userform"}
 						<input type="hidden" name="status" id="status" value="open">

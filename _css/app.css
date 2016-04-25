@@ -11,6 +11,11 @@ TOC
 5. Footer Styles
 
 Colors
+Pink : #E298D7
+Blue : #3BAAFB
+Purple : #841F7F
+Black : #000
+White : #fff
 
 /***************************************/
 
@@ -23,12 +28,12 @@ h1, h2, h3, h4, h5, h6, p, a, th, td 	{ font-family: 'Muli', sans-serif; font-we
 a:link, a:visited	{ font-size: inherit; font-weight: 400; }
 a:hover				{  }
 
-#wrap   			{ margin: 0 3vw; }
+#wrap   			{  }
 
 #head-wrap          {  }
-#navi-wrap          {  }
-#main-wrap          {  }
-#foot-wrap          { padding: 40px 0 20px; }
+#navi-wrap          { background: #3BAAFB; }
+#main-wrap          { background: #E298D7; }
+#foot-wrap          { padding: 40px 0 20px; background: #841F7F; }
 
 i 					{ color: inherit; }
 
@@ -44,8 +49,10 @@ td 					{ vertical-align: top; border: 1px solid #ccc; }
 
 
 /* 3. Nav Styles */
-#navi               { padding: 1.5rem 0; }
-#navi .button 		{ padding: 5px 10px; margin: 0 20px; }
+#navi               { padding: 1rem 0; }
+#navi .button 		{ padding: 5px 10px; margin: 0 20px; color: #fff; }
+#navi a 			{ color: #fff; }
+#navi a img 		{ width: 110px; }
 
 
 /* 4. Content Styles */
