@@ -18,7 +18,9 @@ class SocialCounter{
 		'facebook_id' => 'darwenstheory',
 		
 		//Google API Key for Google related services
-		'google_api_key' => 'AIzaSyCZaJdB2dK7Tj8VsSJaBY-hvlrBoj6oZJI',
+		'google_api_key' => 'AIzaSyA73I_B5uwUiD3BUlL5FUpxdnyD2w7q6QE',
+		//'AIzaSyA73I_B5uwUiD3BUlL5FUpxdnyD2w7q6QE'
+		//'AIzaSyCZaJdB2dK7Tj8VsSJaBY-hvlrBoj6oZJI',
 		
 		//Youtube           
 		'youtube_channel_id' => 'UCfDMgit4HkthQ45fdgI7THA',
@@ -45,7 +47,8 @@ class SocialCounter{
 	* Facebook Like Count
 	*/
 	function GetFacebookCount( $facebookUserName ) {
-		$facebookUserName = substr(strrchr($facebookUserName, "/"), 1);
+		$pos = strrpos($facebookUserName, '/');
+		$facebookUserName = $pos === false ? $facebookUserName : substr($facebookUserName, $pos + 1);
 
 	    $fql  = "SELECT like_count FROM link_stat WHERE url = 'https://www.facebook.com/" . $facebookUserName . "'"; 
 	    $fqlURL = "https://api.facebook.com/method/fql.query?format=json&query=" . urlencode($fql);
@@ -76,7 +79,8 @@ class SocialCounter{
 	*/
 	//to get follower count
 	function GetTwitterCount( $twitterUserName ){
-		$twitterUserName = substr(strrchr($twitterUserName, "/"), 1);
+		$pos = strrpos($twitterUserName, '/');
+		$twitterUserName = $pos === false ? $twitterUserName : substr($twitterUserName, $pos + 1);
 	   	
 	   	$apiUrl = "https://api.twitter.com/1.1/users/show.json";
 		$requestMethod = 'GET';
@@ -114,6 +118,8 @@ class SocialCounter{
 	    
 	    $json = json_decode($response);
 	    
+	    print $response;
+	    
 	    $count = 0;
 		if ( isset( $json->items[0]) ) {
 			if ( $json->items[0]->statistics->subscriberCount !== NULL ) {
@@ -127,7 +133,8 @@ class SocialCounter{
 	* Soundcloud Follower Count
 	*/
 	function GetSoundcloudCount( $soundcloudUserName ) {  
-		$soundcloudUserName = substr(strrchr($soundcloudUserName, "/"), 1);
+		$pos = strrpos($soundcloudUserName, '/');
+		$soundcloudUserName = $pos === false ? $soundcloudUserName : substr($soundcloudUserName, $pos + 1);
 		
 	    $soundcloudUrl = "http://api.soundcloud.com/users/" . $soundcloudUserName . "?client_id=" . $this->social_counter_settings['soundcloud_client_id'];
 	    
@@ -147,9 +154,9 @@ class SocialCounter{
 	    $json = json_decode($response);
 	    
 	    $count = 0;
-		if ( isset( $json->followers_count ) ) {
-			$count = intval( $json->followers_count);                    
-	    }                   
+	    if ( isset( $json->followers_count ) ) {
+	    	$count = intval( $json->followers_count );
+	    }
 	    return $count;
 	}
 	

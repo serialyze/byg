@@ -1,8 +1,31 @@
-<?php
+<script src="/_js//vendor/jquery.min.js"></script>
+<script src="/_js/social.js"></script>
 
+<?php
 	include("_includes/SocialCounter.php");
 	$sc = new SocialCounter();
 
+	if(isset($_POST['action']) && function_exists($_POST['action'])) {
+	
+	    $action = $_POST['action'];
+	    $var = isset($_POST['name']) ? $_POST['name'] : null;
+	    
+	    switch($action) {
+	    case 'GetFacebookCount':
+	    	return $sc.GetFacebookCount($var);
+	    	break;
+	    case 'GetTwitterCount':
+	    	return $sc.GetTwitterCount($var);
+	    	break;
+	    case 'GetSoundcloudCount':
+	    	return $sc.GetSoundcloudCount($var);
+	        break;
+	    default:
+	        die('Access denied for this function!');
+	}
+    
+    $getData = $action($var);
+}	
 
 ?>
 
@@ -33,6 +56,7 @@
 										<label for="">Facebook Page Name
 											<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
 										</label>
+										
 									</div>
 									<div class="columns small-3">
 										
@@ -58,14 +82,9 @@
 										</label>
 									</div>
 
-									<div class="columns small-6">
+									<div class="columns small-9">
 										<label for="">Youtube Channel Name
 											<input type="text" name="artist_youtube_name" id="artist_youtube_name" value="{artist_youtube_name}">
-										</label>
-									</div>
-									<div class="columns small-3">
-										<label for="">Youtube Channel ID
-											<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
 										</label>
 									</div>
 									<div class="columns small-3">
@@ -104,6 +123,7 @@
 									<label for="">Facebook Page Name 
 										<input type="text" name="artist_facebook" id="artist_facebook" value="{artist_facebook}">
 									</label>
+									<button type="button" class="button" id="artist_facebook_update">Update</button>
 								</div>
 								<div class="columns small-3">
 									<label for="">Facebook Count 
@@ -115,6 +135,7 @@
 									<label for="">Twitter Handle
 										<input type="text" name="artist_twitter" id="artist_twitter" value="{artist_twitter}">
 									</label>
+									<button type="button" class="button" id="artist_twitter_update">Update</button>
 								</div>
 								<div class="columns small-3">
 									<label for="">Twitter Count 
@@ -133,19 +154,15 @@
 									</label>
 								</div>
 
-								<div class="columns small-6">
+								<div class="columns small-9">
 									<label for="">Youtube Channel Name
 										<input type="text" name="artist_youtube_name" id="artist_youtube_name" value="{artist_youtube_name}">
 									</label>
 								</div>
-								<div class="columns small-3">
-									<label for="">Youtube Channel ID
-										<input type="text" name="artist_youtube" id="artist_youtube" value="{artist_youtube}">
-									</label>
-								</div>
+								
 								<div class="columns small-3">
 									<label for="">Youtube Count 
-										<input type="text" name="artist_youtube_count" id="artist_youtube_count" value="<?php echo $sc->GetYouTubeCount({artist_youtube}); ?>" >
+										<input type="text" name="artist_youtube_count" id="artist_youtube_count" value="{artist_youtube_count}">
 									</label>
 								</div>
 
@@ -153,6 +170,7 @@
 									<label for="">Soundcloud Handle
 										<input type="text" name="artist_soundcloud" id="artist_soundcloud" value="{artist_soundcloud}">
 									</label>
+									<button type="button" class="button" id="artist_soundcloud_update">Update</button>
 								</div>
 								<div class="columns small-3">
 									<label for="">Soundcloud Count 
