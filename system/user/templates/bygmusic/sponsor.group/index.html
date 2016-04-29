@@ -1,0 +1,46 @@
+{global_open}
+
+    {if group_title == 'Super Admin'} 
+        {sales_nav}
+    {if:elseif group_title == 'Sales'} 
+        {sales_nav}
+    {if:elseif group_title == 'Sponsors'}
+        {sponsor_nav}
+    {if:elseif group_title == 'Artists'}
+        {artist_nav}
+    {if:else}
+        {basic_nav}
+    {/if}
+
+    <div id="main-wrap" class="home"><div id="main">
+        
+        <div class="row">
+        	<div class="columns small-12 medium-8 medium-offset-2">
+             
+                <h2>Could you be a sponsor?</h2>
+
+                <p>You have most likely seen firsthand the rapid changes in how an organization can go to market. While there seems to be limitless marketing options to reach consumers, consumers now also have limitless options to view, or more importantly, NOT view traditional marketing messages.</p>
+
+                <h4>WHO WE ARE</h4>
+                <p>Lead by founder Krish Sharma, BYGMUSIC is a new, innovative marketing company that will revitalize the way you engage with hard-to-reach millennial audiences.</p>
+
+                <h4>WHAT WE OFFER</h4>
+                <P>The BYGMUSIC concept compensates artists who can deliver not only exposure to brands, but more importantly, have their fan base take action and in doing so become brand ambassadors organically.</P>
+
+                <h4>WHY THIS WORKS</h4>
+                <p>Artists today have learned to become self-sufficient in booking shows, promoting upcoming releases and creating a digital following. Through the power of music, social media and hard work, many artists have earned a fan base, which is eager to support them and spread their message.</p>
+                <p>Instead of using traditional digital media, our roster of artists individually reaches out to their fan base with a message and call to action that is tailored made to the needs of the brand.</p>
+                <p>This scalable business model works for brands large and small – local and global and has fast and transparent state of the art metrics where all actions for the brand can be tracked.</p>
+                <p>As a business, you will receive access to the largest demographic that does not consume traditional media, transparent metrics of what our artists are accomplishing for your brand and in the end, have these fans of the artists become fans of your brand.</p>
+                <p>At the same time, your business plays a vital role of artist support that has virtually disappeared over the past ten years.</p>
+
+                <h4>BYG RESULTS</h4>
+                <p>BYGMUSIC has sold over 200 cars for Ford Motor Company and has increased App downloads for Wahoo’s Tacos by over 500%.</p>
+                <p>Let us get to work for your business today – Be a part of the new revolution of marketing engagement and artist support – BYGMUSIC.</p>
+
+                <a href="{path='/register'}" class="button" id="register">Register</a>
+
+            </div>
+        </div>
+
+{global_close}

@@ -16,7 +16,7 @@
         
         <div class="row" id="begin-register"><div class="columns twelve">
         	<h1>Registration</h1>
-        	<p>This is an even better explanation of why you want to joing BYG Music.</p>
+        	<p>Register with some basic info and we’ll get back to you with potential opportunities.</p>
         </div></div>
 
 <!-- *------------ registration success messaging ------------* -->
@@ -33,7 +33,6 @@
 
 			{exp:user:register admin_register="yes" required="" return="register/thankyou" {if segment_2 == 'key'} require_key="yes" return="register/index/success"{/if}}
 			<div class="row"><div class="columns twelve">
-				<h4>Sign up here.</h4>
 				<fieldset>
 					<legend>Account Type</legend>
 					{if segment_2=="key"}
@@ -65,7 +64,7 @@
 							<label>Email<input type="email" name="username" id="email" placeholder="" value=""></label>
 						</div>
 						<div class="small-12 medium-6 columns">
-							<label>Phone<input type="tel" name="artist_contact_phone" placeholder=""></label>
+							<label>Cell<input type="tel" name="artist_contact_phone" placeholder=""></label>
 						</div>
 						{if segment_2=="key"}
 						<div class="small-12 medium-6 columns end">
@@ -79,7 +78,7 @@
 					<legend>Artist Details</legend>
 					<div class="row">
 						<div class="small-12 medium-6 columns end">
-							<label>Group or Artist Name<input type="text" name="screen_name" placeholder=""></label>
+							<label>Artist Name<input type="text" name="screen_name" placeholder=""></label>
 						</div>
 					</div>
 					<div class="row">
@@ -112,9 +111,9 @@
 						<div class="small-12 medium-6 columns">
 							<label>Confirm Password<input type="password" name="password_confirm"  id="password_confirm" placeholder=""></label>
 						</div>
-						<div class="small-12 medium-6 columns end">
+						<!-- <div class="small-12 medium-6 columns end">
 							<input type="checkbox" name="accept_terms" value="y" /><label>I accept the <a href="/terms">Terms of Service</a></label>
-						</div>
+						</div> -->
 					</div>
 				</fieldset>
 

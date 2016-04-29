@@ -2,14 +2,17 @@
         
 		<div class="row">
 			<div class="row columns twelve"><ul class="menu">
-				<li><a href="/home"><img src="_img/site/logo.png" alt=""></a></li>
-				<li><a href="/faq">FAQ</a></li>
-				<li><a class="button hollow" id="login">Login</a></li>
-				<li><a href="{path='/register'}" class="button" id="register">Register</a></li>
+				<li class="float-left"><a href="/home"><img src="/_img/site/logo.png" alt=""></a></li>
+				<!-- <li><a href="/faq">FAQ</a></li> -->
+                
+				<li class="float-right login"><a class="button hollow" id="login">Login</a></li>
+				<!-- <li><a href="{path='/register'}" class="button" id="register">Register</a></li> -->
 			</ul></div>
 		</div>
 
-		<div class="row hide" id="welcome-login">
+    </div></div>
+
+        <div class="row hide" id="welcome-login">
 
 {exp:member:login_form return="home/index"}
                     <div class="row">
@@ -26,5 +29,3 @@
 {/exp:member:login_form}
 
         </div>
-
-    </div></div>

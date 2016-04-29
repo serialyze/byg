@@ -13,7 +13,7 @@
 		</div></div> -->
 
 {exp:user:profile dynamic="yes"}
-		<div class="row">
+		<div class="row" id="artist-details">
 			<div class="columns small-12 medium-6">
 		{exp:channel:entries channel="artists" author_id="{segment_3}" limit="1"}
 			{if no_results}
@@ -78,9 +78,10 @@
 {/exp:user:profile}
 
 {if group_title=="Super Admin"}
-		<hr>
+		
 
 		<div class="row sales">
+			<fieldset><legend>Sales</legend>
 {exp:user:profile dynamic="yes"}
 			<div class="columns small-12 medium-3 medium-push-9">
 				<h3>Contact</h3>
@@ -124,7 +125,9 @@
 {/exp:channel:entries}
 				</table>
 			</div>
+			</fieldset>
 		</div>
+	
 {/if}
 
 

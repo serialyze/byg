@@ -9,20 +9,13 @@
                     <option value="">etc</option>
                 </select>
             </div>
-            <div class="columns medium-2">
+            <div class="columns medium-2 end">
                 <select name="" id="">
                     <option value="">-Demographic-</option>
                     <option value="">18 - 34 Male</option>
                     <option value="">18 - 34 Female</option>
                     <option value="">35 - 54 Male</option>
                     <option value="">35 - 54 Female</option>
-                    <option value="">etc</option>
-                </select>
-            </div>
-            <div class="columns medium-2 end">
-                <select name="" id="">
-                    <option value="">-Region-</option>
-                    <option value="">Los Angeles, CA</option>
                     <option value="">etc</option>
                 </select>
             </div>
@@ -39,7 +32,7 @@
         			<th width="150">Followers</th>
         		</tr>
 
-{exp:user:users group_id="8" dynamic="no"}
+{exp:user:users group_id="8" dynamic="no" search:artist_genre="{segment_3}"}
         		<tr>
         			<td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
         			<td>{artist_city}, {artist_state}</td>
