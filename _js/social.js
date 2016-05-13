@@ -70,17 +70,18 @@ $(document).ready(function(){
     $('#artist_twitter').keyup(function() {
     	$('#error_artist_twitter').remove();
     	var inputVal = $(this).val();
-    	var urlReg = /\@/
-    	if(urlReg.test(inputVal)) {
-    		$(this).after('<span id="error_artist_twitter" class="error input_error">No @ symbol needed. Please remove.</span>');
+    	var urlReg = /\//ig; //  Matches /
+    	var atReg = /\@/
+    	if(urlReg.test(inputVal) || atReg.test(inputVal)) {
+    		$(this).after('<span id="error_artist_twitter" class="error input_error">No @ symbol or URL needed. Please remove.</span>');
     	}
     });
     
     $('#artist_instagram').keyup(function() {
     	$('#error_artist_instagram').remove();
     	var inputVal = $(this).val();
-    	var urlReg = /\@/
-    	if(urlReg.test(inputVal)) {
+    	var atReg = /\@/
+    	if(atReg.test(inputVal)) {
     		$(this).after('<span id="error_artist_instagram" class="error input_error">No @ symbol needed. Please remove.</span>');
     	}
     });
