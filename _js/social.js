@@ -9,7 +9,6 @@ $(document).ready(function(){
 			  url: '/_includes/GetSocial.php',
 			  data: {action: "GetFacebookCount", name: $('#artist_facebook').val()}
 			}).done(function( data ) {
-				alert(data);
 				$('#artist_facebook_count').val(data);
 			});
 		}
@@ -24,7 +23,6 @@ $(document).ready(function(){
 			  url: '/_includes/GetSocial.php',
 			  data: {action: "GetTwitterCount", name: $('#artist_twitter').val()}
 			}).done(function( data ) {
-				alert(data);
 				$('#artist_twitter_count').val(data);
 			});
 		}
@@ -36,7 +34,6 @@ $(document).ready(function(){
 		  url: '/_includes/GetSocial.php',
 		  data: {action: "GetYoutubeCount", name: $('#artist_youtube').val()}
 		}).done(function( data ) {
-			alert(data);
 			$('#artist_youtube_count').val(data);
 		});
     });
@@ -62,8 +59,9 @@ $(document).ready(function(){
     	$('#error_artist_facebook').remove();
     	var inputVal = $(this).val();
     	var urlReg = /\//ig; //  Matches /
-    	if(urlReg.test(inputVal)) {
-    		$(this).after('<span id="error_artist_facebook" class="error input_error">Facebook Page Name ONLY - no URL</span>');
+    	var atReg = /\@/
+    	if(urlReg.test(inputVal) || atReg.test(inputVal)) {
+    		$(this).after('<span id="error_artist_facebook" class="error input_error">No @ symbol or URL needed. Please remove.</span>');
     	}
     });
     
@@ -80,10 +78,30 @@ $(document).ready(function(){
     $('#artist_instagram').keyup(function() {
     	$('#error_artist_instagram').remove();
     	var inputVal = $(this).val();
+    	var urlReg = /\//ig; //  Matches /
     	var atReg = /\@/
-    	if(atReg.test(inputVal)) {
-    		$(this).after('<span id="error_artist_instagram" class="error input_error">No @ symbol needed. Please remove.</span>');
+    	if(urlReg.test(inputVal) || atReg.test(inputVal)) {
+    		$(this).after('<span id="error_artist_instagram" class="error input_error">No @ symbol or URL needed. Please remove.</span>');
     	}
     });
     
+    $('#artist_soundcloud').keyup(function() {
+    	$('#error_artist_soundcloud').remove();
+    	var inputVal = $(this).val();
+    	var urlReg = /\//ig; //  Matches /
+    	var atReg = /\@/
+    	if(urlReg.test(inputVal) || atReg.test(inputVal)) {
+    		$(this).after('<span id="error_artist_soundcloud" class="error input_error">No @ symbol or URL needed. Please remove.</span>');
+    	}
+    });
+    
+    $('#artist_youtube_name').keyup(function() {
+    	$('#error_artist_youtube').remove();
+    	var inputVal = $(this).val();
+    	var urlReg = /\//ig; //  Matches /
+    	var atReg = /\@/
+    	if(urlReg.test(inputVal) || atReg.test(inputVal)) {
+    		$(this).after('<span id="error_artist_youtube" class="error input_error">No @ symbol or URL needed. Please remove.</span>');
+    	}
+    });
 });
