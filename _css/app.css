@@ -50,6 +50,8 @@ legend 				{ color: #841F7F; }
 
 hr 					{ border: none; height: 0; border-top: 1px solid #E298D7; background: #fff; }
 
+.error 				{ color: #bc1e2c; }
+
 
 /* 1b. Utilities */
 .underline 			{ text-decoration: underline; }
