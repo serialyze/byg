@@ -19,7 +19,7 @@
         </div></div>
 
 {if logged_in_group_id == "1"} {!-- Make sure the person viewing this page is a Super Admin --}
-{exp:user:key template="invite/notify-sponsor" html="no" parse="none" word_wrap="no" return="invite/sponsor/success"}
+{exp:user:key template="invite/notify-sponsor" html="yes" parse="none" word_wrap="no" return="invite/sponsor/success"}
 				<div class="row">
 					<fieldset class="fieldset">
 						<legend>Company Information</legend>
