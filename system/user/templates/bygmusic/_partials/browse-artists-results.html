@@ -42,7 +42,7 @@
             </div>
 
             <div class="columns medium-2 end">
-                <select name="artist_fans_age" id="">
+                <select name="artist_fans_gender" id="">
                     <option value="">-Fans Age-</option>
                     <option value="12 - 17">12 - 17</option>
                     <option value="18 - 34">18 - 34</option>
@@ -56,6 +56,7 @@
         </div>
 
         <div class="row"><div class="columns twelve">
+            <h6>{total_results} results for: {artist_genre}, {artist_fans_gender}, {artist_fans_age}</h6>
         	<table class="hover">
         		
         		<tr>
@@ -66,7 +67,10 @@
         			<th width="150">Followers</th>
         		</tr>
 
-{exp:user:users group_id="8" dynamic="no"}
+{exp:user:results group_id="8" dynamic="no"}
+    {if user_no_results}
+        <tr><td colspan="5">Sorry, no results were found.</td></tr>
+    {/if}
         		<tr>
         			<td><a href="/profile/artist/{member_id}">{screen_name}</a></td>
         			<td>{artist_city}, {artist_state}</td>
@@ -75,7 +79,7 @@
         			<!-- <td>[ follower counts ]</td> -->
                     <td>{artist_fans_age} {artist_fans_gender}</td>
         		</tr>
-{/exp:user:users}
+{/exp:user:results}
 
         	</table>
         </div></div>

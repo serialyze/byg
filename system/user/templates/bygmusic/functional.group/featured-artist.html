@@ -1,0 +1,13 @@
+{exp:channel:entries channel="artists" search:artist_name_for_search="{embed:artist_name}" dynamic="no" limit="1"}
+
+	{if no_results}
+		<p>We're looking for the best bands!</p>
+	{/if}
+
+			
+                <h5>Featured Artist</h5>
+                <img src="{artist_bio_photo}" alt="">
+                <a href="/profile/artist/{author_id}"><h5>{embed:artist_name}</h5></a>
+            
+
+{/exp:channel:entries}

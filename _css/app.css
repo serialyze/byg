@@ -11,18 +11,20 @@ TOC
 5. Footer Styles
 
 Colors
-Pink : #E298D7
-Blue : #3BAAFB
-Purple : #841F7F
+Pink : #E298D7 F946A2
+Blue : #3BAAFB 23FFFF
+Purple : #841F7F 6725A1
 Black : #000
-White : #fff
+White : #fff FEFEFE
+
+Random Orange : #FABA73
 
 /***************************************/
 
 /* 1. Global Styles */
 *					{ font-size: 15px; }
 
-h1, h2, h3, h4, h5, h6, p, a, th, td 	{ font-family: 'Muli', sans-serif; font-weight: 300; }
+h1, h2, h3, h4, h5, h6, p, a, th, td 	{ font-family: 'Roboto', sans-serif; font-weight: 300; }
 
 
 a:link, a:visited	{ font-size: inherit; font-weight: 400; color: #841F7F; }
@@ -40,7 +42,7 @@ i 					{ color: inherit; }
 th 					{ text-align: left; font-weight: 400; }
 td 					{ vertical-align: top; border: 1px solid #ccc; }
 
-.button 			{ background-color: #3BAAFB; }
+.button 			{ background-color: #3BAAFB; border-radius: 2px; }
 
 fieldset 			{ border: 1px solid #E298D7 !important; padding: 0.5rem 1rem; margin: 1rem 0; }
 fieldset fieldset 	{ border: none !important; }

@@ -38,9 +38,73 @@
                 <p>BYGMUSIC has sold over 200 cars for Ford Motor Company and has increased App downloads for Wahoo’s Tacos by over 500%.</p>
                 <p>Let us get to work for your business today – Be a part of the new revolution of marketing engagement and artist support – BYGMUSIC.</p>
 
-                <a href="{path='/register'}" class="button" id="register">Register</a>
+                <!-- <a href="{path='/register'}" class="button" id="register">Register</a> -->
 
             </div>
         </div>
+
+        {exp:user:register admin_register="yes" required="" return="register/thankyou" {if segment_2 == 'key'} require_key="yes" return="register/index/success"{/if}}
+            <div class="row"><div class="columns small-12 medium-8 medium-offset-2">
+
+                <h2>Sponsor Registration</h2>
+                
+                <fieldset>
+                    <legend>Contact Details</legend>
+                    <div class="row">
+
+                        <input type="hidden" name="requested_group" value="7" id="sponsorregradio">
+
+                        <div class="small-12 medium-6 columns">
+                            <label>Name<input type="text" name="contact_name" placeholder=""></label>
+                        </div>
+                        <div class="small-12 medium-6 columns">
+                            <label>Position<input type="text" name="contact_position" placeholder=""></label>
+                        </div>
+                        <div class="small-12 medium-6 columns">
+                            <label>Email<input type="email" name="username" id="email" placeholder="" value=""></label>
+                        </div>
+                        <div class="small-12 medium-6 columns">
+                            <label>Cell<input type="tel" name="artist_contact_phone" placeholder=""></label>
+                        </div>
+                        {if segment_2=="key"}
+                        <div class="small-12 medium-6 columns end">
+                            <label for="">Invitation Key<input type="text" name="key" id="key" value="{key}"></label>
+                        </div>
+                        {/if}
+                    </div>
+                </fieldset>
+
+                <fieldset id="sponsorreg">
+                    <legend>Sponsor Details</legend>
+                    <div class="row">
+                        <div class="small-12 medium-6 columns end">
+                            <label>Company Name<input type="text" name="screen_name" placeholder=""></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="twelve columns">
+                            <label>What can we help you with?</label><textarea name="user_needs" id="user_needs" cols="30" rows="4"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Create a Password</legend>
+                    <div class="row">
+                        <div class="small-12 medium-6 columns">
+                            <label>Password<input type="password" name="password" id="password" placeholder=""></label>
+                        </div>
+                        <div class="small-12 medium-6 columns">
+                            <label>Confirm Password<input type="password" name="password_confirm"  id="password_confirm" placeholder=""></label>
+                        </div>
+                        <div class="small-12 medium-6 columns end">
+                            <input type="hidden" name="accept_terms" value="y" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <input type="submit" value="Submit" class="button small">
+            </div></div>
+            {/exp:user:register}
 
 {global_close}

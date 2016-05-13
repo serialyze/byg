@@ -1,0 +1,63 @@
+{global_open}
+
+	{if group_title == "Super Admin"}
+		{sales_nav}
+	{/if}
+
+	<div id="main-wrap"><div id="main">
+        
+        <div class="row"><div class="columns twelve">	
+			<h1>{username}, Invite an Artist</h1>
+        </div></div>
+
+        <div class="row"><div class="columns twelve">
+        	{if segment_3 == "success"}
+				<div class="alert alert-success" role="alert">
+					<p class="lead">Invitation key successfully sent!</p>
+				</div>
+			{/if}
+        </div></div>
+
+{if logged_in_group_id == "1"} {!-- Make sure the person viewing this page is a Super Admin --}
+{exp:user:key template="invite/notify-artist" html="no" parse="none" word_wrap="no" return="invite/artist/success"}
+				<div class="row">
+					<fieldset class="fieldset">
+						<legend>Artist Information</legend>
+
+						<input type="hidden" name="sender_email" id="sender_email" value="noreply@bygmusic.com" />
+						<input type="hidden" name="sender_name" id="sender_name" value="{site_name}" />
+						<input type="hidden" name="subject" id="subject" value="Invitation to join {site_name}!" />
+						<input type="hidden" name="group_id" value="8"> 
+
+							<div class="twelve columns">
+								<label>Name
+									<input type="text" name="screen_name" placeholder="">
+								</label>
+							</div>
+							<div class="twelve columns">
+								<label>Email
+									<!-- <input type="email" placeholder=""> -->
+									<input type="email" name="recipient_email" id="recipient_email" />
+								</label>
+							</div>
+							
+					</fieldset>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="button">Submit</button>
+				</div>
+{/exp:user:key}
+{if:else} {!-- If not a Super Admin, show error --}
+			<div class="row">
+				<div class="columns twelve">
+					<div class="alert warning">
+						<p class="lead"><strong>Error!</strong> You must be a site administrator to view this page.</p>
+					</div>
+				</div>
+			</div>
+{/if} {!-- END check to see if Super Admin --}
+        
+    </div></div>
+
+{global_close}

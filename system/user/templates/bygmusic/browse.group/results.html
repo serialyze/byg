@@ -16,14 +16,14 @@
 			{if:elseif group_title == 'Super Admin'}
 				<h1>{username}, Browse the {segment_2}</h1>
 			{if:elseif group_title == 'Sponsors'}
-				{exp:user:profile}<h1>{screen_name}, Check out some Artists.</h1>{/exp:user:profile}
+				{exp:user:profile}<h1>{sponsor_contact_name}, Check out some Artists.</h1>{/exp:user:profile}
 			{/if}
         </div></div>
 
 		{if segment_2=='sponsors'}
 			{browse-sponsors}
 		{if:else}
-			{browse-artists}
+			{browse-artists-results}
 		{/if}
         
     </div></div>
